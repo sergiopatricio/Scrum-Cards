@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory android:title="@string/preferences">
+    <CheckBoxPreference android:title="@string/preference_scroll_cards_tittle"
+                        android:summary="@string/preference_scroll_cards_description"
+                        android:defaultValue="false"
+                        android:key="scroll_cards"/>
+    <CheckBoxPreference android:title="@string/preference_show_card_in_fullscreen"
+                        android:defaultValue="false"
+                        android:key="show_card_in_fullscreen"/>
+    <CheckBoxPreference android:title="@string/preference_keep_screen_on"
+                        android:defaultValue="false"
+                        android:key="keep_screen_on"/>
+  </PreferenceCategory>
+</PreferenceScreen>
