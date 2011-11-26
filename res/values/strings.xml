@@ -2,15 +2,18 @@
 <resources>
     <string name="app_name">Scrum Cards</string>
 
-    <string name="information">Information</string>
+    <string name="menu_information">Information</string>
+    <string name="menu_preferences">Preferences</string>
+
+    <string name="information">About Scrum Cards</string>
     <string name="info_desc1">This is just a simple set of scrum cards.</string>
     <string name="info_desc2">Select the card for voting and swipe for returning to card select.</string>
     <string name="info_desc3">It\'s possible to scroll cards, just activate option in preferences. In this case vertical swype returns to card select and horizontal swype scrolls cards.</string>
 
-    <string name="preferences">Preferences</string>
+    <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>
     <string name="preference_scroll_cards_description">Scroll cards on horizontal swype</string>
-    <string name="preference_show_card_in_fullscreen">Show card in fullscreen</string>
+    <string name="preference_fullscreen">Fullscreen</string>
     <string name="preference_keep_screen_on">Keep screen on</string>
 
 </resources>

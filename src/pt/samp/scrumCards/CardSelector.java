@@ -7,18 +7,20 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 public class CardSelector extends Activity {
+    private boolean fullscreen = false;
+    private boolean keepScreeOn = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
-        if (Preferences.keepScreenOn(this)) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
         setContentView(R.layout.main);
+
+        this.fullscreen = Preferences.showInFullscreen(this);
+        this.keepScreeOn = Preferences.keepScreenOn(this);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -28,6 +30,17 @@ public class CardSelector extends Activity {
                     showCard(Integer.parseInt((String) view.getTag()));
                 }
             });
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // check for preferences change
+        if (fullscreen != Preferences.showInFullscreen(this) || keepScreeOn != Preferences.keepScreenOn(this)) {
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
         }
     }
 

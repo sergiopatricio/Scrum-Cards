@@ -9,8 +9,6 @@ import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 
@@ -21,14 +19,8 @@ public class CardShow extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
-        if (Preferences.showCardInFullscreen(this)) {
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-        if (Preferences.keepScreenOn(this)) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
         setContentView(R.layout.show);
 
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);

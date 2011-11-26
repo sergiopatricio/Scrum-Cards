@@ -42,15 +42,17 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
-        public static final int info_desc1=0x7f050002;
-        public static final int info_desc2=0x7f050003;
-        public static final int info_desc3=0x7f050004;
-        public static final int information=0x7f050001;
-        public static final int preference_keep_screen_on=0x7f050009;
-        public static final int preference_scroll_cards_description=0x7f050007;
-        public static final int preference_scroll_cards_tittle=0x7f050006;
-        public static final int preference_show_card_in_fullscreen=0x7f050008;
-        public static final int preferences=0x7f050005;
+        public static final int info_desc1=0x7f050004;
+        public static final int info_desc2=0x7f050005;
+        public static final int info_desc3=0x7f050006;
+        public static final int information=0x7f050003;
+        public static final int menu_information=0x7f050001;
+        public static final int menu_preferences=0x7f050002;
+        public static final int preference_fullscreen=0x7f05000a;
+        public static final int preference_keep_screen_on=0x7f05000b;
+        public static final int preference_scroll_cards_description=0x7f050009;
+        public static final int preference_scroll_cards_tittle=0x7f050008;
+        public static final int preferences=0x7f050007;
     }
     public static final class style {
         public static final int card_option_item=0x7f060001;

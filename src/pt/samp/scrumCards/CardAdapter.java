@@ -1,13 +1,9 @@
 package pt.samp.scrumCards;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Gallery.LayoutParams;
-import android.widget.TextView;
 
 public class CardAdapter extends BaseAdapter {
     Context context = null;
