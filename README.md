@@ -7,6 +7,6 @@ It's possible to rotate cards on horizontal swype, just activate option in prefe
 Options included:
 
 * Scroll cards
-* Show card in full screen
+* Fullscreen
 * Keep screen on
 
