@@ -1,9 +1,8 @@
 package pt.samp.scrumCards;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.view.Gravity;
-import android.widget.Gallery.LayoutParams;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 
@@ -14,13 +13,10 @@ public final class Cards {
     public static final String[] VALUES = new String[] { "0", "1/2", "1", "2", "3", "5", "8", "13", "20", "40", "100",
             "?" };
 
-    public static TextView createCardView(Context context, String cardValue) {
-        TextView textView = new TextView(context);
-        textView.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-        textView.setBackgroundResource(R.drawable.backgound_card_show);
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(180);
-        textView.setTextColor(Color.BLACK);
+    public static TextView createCardView(Context context, ViewGroup parent, String cardValue) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService (Context.LAYOUT_INFLATER_SERVICE);
+        TextView textView =  (TextView) inflater.inflate(R.layout.card, parent, false);
+        //textView.setLayoutParams(new android.widget.Gallery.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
         textView.setText(cardValue);
         return textView;
     }

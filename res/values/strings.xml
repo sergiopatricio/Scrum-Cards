@@ -15,5 +15,9 @@
     <string name="preference_scroll_cards_description">Scroll cards on horizontal swype</string>
     <string name="preference_fullscreen">Fullscreen</string>
     <string name="preference_keep_screen_on">Keep screen on</string>
+    <string name="preference_theme">Cards theme</string>
+
+    <string name="theme_black_on_white">Black On White</string>
+    <string name="theme_white_on_black">White On Black</string>
 
 </resources>

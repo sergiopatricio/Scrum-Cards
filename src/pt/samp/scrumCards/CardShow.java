@@ -20,11 +20,13 @@ public class CardShow extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
+        this.setTheme(Preferences.getTheme(this));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);
 
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);
 
+        LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
         View cardView = null;
         if (Preferences.scrollCards(this)) {
             MyGallery gallery = new MyGallery(this);
@@ -40,11 +42,9 @@ public class CardShow extends Activity {
 
             cardView = gallery;
         } else {
-            cardView = Cards.createCardView(this, Cards.VALUES[cardPosition]);
+            cardView = Cards.createCardView(this, view, Cards.VALUES[cardPosition]);
             gestureDetector = new GestureDetector(new MyGestureDetector());
         }
-
-        LinearLayout view = (LinearLayout) findViewById(R.id.card_show);
         view.addView(cardView);
     }
 

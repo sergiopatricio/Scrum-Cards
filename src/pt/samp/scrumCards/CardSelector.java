@@ -12,15 +12,19 @@ import android.widget.TextView;
 public class CardSelector extends Activity {
     private boolean fullscreen = false;
     private boolean keepScreeOn = false;
+    private int theme = R.style.Theme_default;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
+        this.setTheme(Preferences.getTheme(this));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
         this.fullscreen = Preferences.showInFullscreen(this);
         this.keepScreeOn = Preferences.keepScreenOn(this);
+        this.theme = Preferences.getTheme(this);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -37,7 +41,8 @@ public class CardSelector extends Activity {
     protected void onResume() {
         super.onResume();
         // check for preferences change
-        if (fullscreen != Preferences.showInFullscreen(this) || keepScreeOn != Preferences.keepScreenOn(this)) {
+        if (fullscreen != Preferences.showInFullscreen(this) || keepScreeOn != Preferences.keepScreenOn(this)
+                || theme != Preferences.getTheme(this)) {
             Intent intent = getIntent();
             finish();
             startActivity(intent);

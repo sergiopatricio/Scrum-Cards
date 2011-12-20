@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <attr name="mainWindow" format="reference" />
+  <attr name="cardOptionItem" format="reference" />
+  <attr name="fullCard" format="reference" />
+</resources>

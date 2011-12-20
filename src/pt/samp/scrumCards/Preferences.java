@@ -10,6 +10,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class Preferences extends PreferenceActivity {
+    private static final String THEME_DEFAULT = "default";
+    private static final String THEME_WHITE_ON_BLACK = "white_on_black";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
@@ -17,19 +20,32 @@ public class Preferences extends PreferenceActivity {
         addPreferencesFromResource(R.xml.preferences);
     }
 
+    private static SharedPreferences getSharedPreferences(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context);
+    }
+
     public static boolean scrollCards(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getBoolean("scroll_cards", false);
+        return getSharedPreferences(context).getBoolean("scroll_cards", false);
     }
 
     public static boolean showInFullscreen(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getBoolean("fullscreen", false);
+        return getSharedPreferences(context).getBoolean("fullscreen", false);
     }
 
     public static boolean keepScreenOn(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getBoolean("keep_screen_on", false);
+        return getSharedPreferences(context).getBoolean("keep_screen_on", false);
+    }
+
+    public static int getTheme(Context context) {
+        String theme = getSharedPreferences(context).getString("theme", THEME_DEFAULT);
+        int idTheme = R.style.Theme_default;
+        if (theme.equals(THEME_DEFAULT)) {
+            idTheme = R.style.Theme_default;
+        } else if (theme.equals(THEME_WHITE_ON_BLACK)) {
+            idTheme = R.style.Theme_1;
+        }
+
+        return idTheme;
     }
 
     public static void setWindowFlags(Activity activity) {
@@ -37,7 +53,7 @@ public class Preferences extends PreferenceActivity {
             activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
-        if (Preferences.keepScreenOn(activity)) {
+        if (keepScreenOn(activity)) {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }

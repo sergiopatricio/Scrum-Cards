@@ -11,5 +11,10 @@
     <CheckBoxPreference android:title="@string/preference_keep_screen_on"
                         android:defaultValue="false"
                         android:key="keep_screen_on"/>
+    <ListPreference android:title="@string/preference_theme"
+                    android:defaultValue="default"
+                    android:key="theme"
+                    android:entries="@array/theme_names"
+                    android:entryValues="@array/theme_keys" />
   </PreferenceCategory>
 </PreferenceScreen>

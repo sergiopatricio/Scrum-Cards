@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="theme_names">
+    <item>@string/theme_black_on_white</item>
+    <item>@string/theme_white_on_black</item>
+  </string-array>
+
+  <string-array name="theme_keys">
+    <item>default</item>
+    <item>white_on_black</item>
+  </string-array>
+
+
+  <style name="Theme.default" parent="android:Theme">
+    <item name="mainWindow">@style/main_window</item>
+    <item name="cardOptionItem">@style/card_option_item</item>
+    <item name="fullCard">@style/full_card</item>
+  </style>
+  <style name="Theme.1" parent="android:Theme">
+    <item name="mainWindow">@style/main_window_1</item>
+    <item name="cardOptionItem">@style/card_option_item_1</item>
+    <item name="fullCard">@style/full_card_1</item>
+  </style>
+
+</resources>
