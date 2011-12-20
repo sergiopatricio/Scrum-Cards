@@ -29,9 +29,6 @@ public class CardAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //LayoutInflater inflater = (LayoutInflater) context.getSystemService (Context.LAYOUT_INFLATER_SERVICE);
-        //return inflater.inflate(R.layout.card, parent, false);
-
         return Cards.createCardView(context, parent, Cards.VALUES[position]);
     }
 
