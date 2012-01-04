@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class CardSelector extends Activity {
     private boolean fullscreen = false;
     private boolean keepScreeOn = false;
-    private int theme = R.style.Theme_default;
+    private int theme = 0;
 
 
     @Override

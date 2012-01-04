@@ -10,8 +10,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class Preferences extends PreferenceActivity {
-    private static final String THEME_DEFAULT = "default";
-    private static final String THEME_WHITE_ON_BLACK = "white_on_black";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +35,16 @@ public class Preferences extends PreferenceActivity {
     }
 
     public static int getTheme(Context context) {
-        String theme = getSharedPreferences(context).getString("theme", THEME_DEFAULT);
-        int idTheme = R.style.Theme_default;
-        if (theme.equals(THEME_DEFAULT)) {
-            idTheme = R.style.Theme_default;
-        } else if (theme.equals(THEME_WHITE_ON_BLACK)) {
-            idTheme = R.style.Theme_1;
+        String theme = getSharedPreferences(context).getString("theme", "black_on_white_1");
+        int idTheme = R.style.Theme_black_on_white_1;
+        if ("black_on_white_1".equals(theme)) {
+            idTheme = R.style.Theme_black_on_white_1;
+        } else if ("black_on_white_2".equals(theme)) {
+            idTheme = R.style.Theme_black_on_white_2;
+        } else if ("white_on_black_1".equals(theme)) {
+            idTheme = R.style.Theme_white_on_black_1;
+        } else if ("white_on_black_2".equals(theme)) {
+            idTheme = R.style.Theme_white_on_black_2;
         }
 
         return idTheme;

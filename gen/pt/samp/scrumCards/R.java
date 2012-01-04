@@ -27,10 +27,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int mainWindow=0x7f010000;
     }
     public static final class drawable {
-        public static final int background_card_show=0x7f020000;
-        public static final int background_card_show_1=0x7f020001;
-        public static final int background_option_item=0x7f020002;
-        public static final int background_option_item_1=0x7f020003;
+        public static final int background_card_show_bw=0x7f020000;
+        public static final int background_card_show_wb=0x7f020001;
+        public static final int background_option_item_bw=0x7f020002;
+        public static final int background_option_item_wb=0x7f020003;
         public static final int icon=0x7f020004;
     }
     public static final class id {
@@ -74,23 +74,38 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int preference_scroll_cards_tittle=0x7f050008;
         public static final int preference_theme=0x7f05000c;
         public static final int preferences=0x7f050007;
-        public static final int theme_black_on_white=0x7f05000d;
-        public static final int theme_white_on_black=0x7f05000e;
+        public static final int theme_black_on_white_1=0x7f05000d;
+        public static final int theme_black_on_white_2=0x7f05000e;
+        public static final int theme_white_on_black_1=0x7f05000f;
+        public static final int theme_white_on_black_2=0x7f050010;
     }
     public static final class style {
-        public static final int Theme_1=0x7f060008;
-        public static final int Theme_default=0x7f060007;
+        public static final int Theme_black_on_white_1=0x7f06000c;
+        public static final int Theme_black_on_white_2=0x7f06000d;
+        public static final int Theme_white_on_black_1=0x7f06000e;
+        public static final int Theme_white_on_black_2=0x7f06000f;
+        public static final int black_on_white_1_card_option_item=0x7f060005;
+        public static final int black_on_white_1_full_card=0x7f060006;
+        /**  black on white 1 
+         */
+        public static final int black_on_white_1_main_window=0x7f060004;
+        /**  black on white 2 
+         */
+        public static final int black_on_white_2_full_card=0x7f060007;
         public static final int card_option_item=0x7f060002;
-        public static final int card_option_item_1=0x7f060005;
         public static final int card_option_line=0x7f060001;
         public static final int full_card=0x7f060003;
-        public static final int full_card_1=0x7f060006;
-        /**  defaults styles: black on white 
+        /**  defaults 
          */
         public static final int main_window=0x7f060000;
-        /**  style 1: white on black 
+        public static final int white_on_black_1_card_option_item=0x7f060009;
+        public static final int white_on_black_1_full_card=0x7f06000a;
+        /**  white on black 1 
          */
-        public static final int main_window_1=0x7f060004;
+        public static final int white_on_black_1_main_window=0x7f060008;
+        /**  white on black 2 
+         */
+        public static final int white_on_black_2_full_card=0x7f06000b;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;
