@@ -9,4 +9,4 @@ Options included:
 * Scroll cards
 * Fullscreen
 * Keep screen on
-
+* Themes
