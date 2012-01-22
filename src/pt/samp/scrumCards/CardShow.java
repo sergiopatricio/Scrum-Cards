@@ -20,7 +20,7 @@ public class CardShow extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
-        this.setTheme(Preferences.getTheme(this));
+        this.setTheme(Preferences.getIdTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);
 
@@ -28,7 +28,7 @@ public class CardShow extends Activity {
 
         LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
         View cardView = null;
-        if (Preferences.scrollCards(this)) {
+        if (Preferences.scrollCards()) {
             MyGallery gallery = new MyGallery(this);
             gallery.setAdapter(new CardAdapter(this));
             gallery.setSelection(cardPosition);

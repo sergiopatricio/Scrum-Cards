@@ -10,6 +10,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class Preferences extends PreferenceActivity {
+    private static boolean scrollCards = false;
+    private static boolean showInFullscreen = false;
+    private static boolean keepScreenOn = false;
+    private static int idTheme = R.style.Theme_black_on_white_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,25 +22,23 @@ public class Preferences extends PreferenceActivity {
         addPreferencesFromResource(R.xml.preferences);
     }
 
-    private static SharedPreferences getSharedPreferences(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context);
-    }
+    /**
+     *
+     * @param context
+     * @return true if some preference changed, false if nothing changed
+     */
+    public static boolean loadPreferences(Context context) {
+        boolean oldScrollCards = scrollCards;
+        boolean oldShowInFullscreen = showInFullscreen;
+        boolean oldKeepScreenOn = keepScreenOn;
+        int oldIdTheme = idTheme;
 
-    public static boolean scrollCards(Context context) {
-        return getSharedPreferences(context).getBoolean("scroll_cards", false);
-    }
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        scrollCards = sharedPreferences.getBoolean("scroll_cards", false);
+        showInFullscreen = sharedPreferences.getBoolean("fullscreen", false);
+        keepScreenOn = sharedPreferences.getBoolean("keep_screen_on", false);
 
-    public static boolean showInFullscreen(Context context) {
-        return getSharedPreferences(context).getBoolean("fullscreen", false);
-    }
-
-    public static boolean keepScreenOn(Context context) {
-        return getSharedPreferences(context).getBoolean("keep_screen_on", false);
-    }
-
-    public static int getTheme(Context context) {
-        String theme = getSharedPreferences(context).getString("theme", "black_on_white_1");
-        int idTheme = R.style.Theme_black_on_white_1;
+        String theme = sharedPreferences.getString("theme", "black_on_white_1");
         if ("black_on_white_1".equals(theme)) {
             idTheme = R.style.Theme_black_on_white_1;
         } else if ("black_on_white_2".equals(theme)) {
@@ -45,17 +47,39 @@ public class Preferences extends PreferenceActivity {
             idTheme = R.style.Theme_white_on_black_1;
         } else if ("white_on_black_2".equals(theme)) {
             idTheme = R.style.Theme_white_on_black_2;
+        } else {
+            idTheme = R.style.Theme_black_on_white_1;
         }
 
+        if (oldScrollCards != scrollCards || oldShowInFullscreen != showInFullscreen || oldKeepScreenOn != keepScreenOn
+                || oldIdTheme != idTheme) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean scrollCards() {
+        return scrollCards;
+    }
+
+    public static boolean showInFullscreen() {
+        return showInFullscreen;
+    }
+
+    public static boolean keepScreenOn() {
+        return keepScreenOn;
+    }
+
+    public static int getIdTheme() {
         return idTheme;
     }
 
     public static void setWindowFlags(Activity activity) {
-        if (showInFullscreen(activity)) {
+        if (showInFullscreen) {
             activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
-        if (keepScreenOn(activity)) {
+        if (keepScreenOn) {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }

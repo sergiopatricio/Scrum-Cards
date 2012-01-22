@@ -10,21 +10,15 @@ import android.view.View;
 import android.widget.TextView;
 
 public class CardSelector extends Activity {
-    private boolean fullscreen = false;
-    private boolean keepScreeOn = false;
-    private int theme = 0;
-
+    private static int PREFERENCES_REQUEST_CODE = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Preferences.loadPreferences(this);
         Preferences.setWindowFlags(this);
-        this.setTheme(Preferences.getTheme(this));
+        this.setTheme(Preferences.getIdTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        this.fullscreen = Preferences.showInFullscreen(this);
-        this.keepScreeOn = Preferences.keepScreenOn(this);
-        this.theme = Preferences.getTheme(this);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -38,11 +32,9 @@ public class CardSelector extends Activity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // check for preferences change
-        if (fullscreen != Preferences.showInFullscreen(this) || keepScreeOn != Preferences.keepScreenOn(this)
-                || theme != Preferences.getTheme(this)) {
+        if (requestCode == PREFERENCES_REQUEST_CODE && Preferences.loadPreferences(this)) {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
@@ -64,7 +56,7 @@ public class CardSelector extends Activity {
             startActivity(new Intent(this, Information.class));
             return true;
         case R.id.menu_preferences:
-            startActivity(new Intent(this, Preferences.class));
+            startActivityForResult(new Intent(this, Preferences.class), PREFERENCES_REQUEST_CODE);
             return true;
         default:
             return super.onOptionsItemSelected(item);
