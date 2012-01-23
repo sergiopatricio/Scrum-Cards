@@ -16,7 +16,6 @@ public class CardSelectorActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         Preferences.loadPreferences(this);
         Preferences.setWindowFlags(this);
-        this.setTheme(Preferences.getIdTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 

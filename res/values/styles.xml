@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- defaults -->
     <style name="main_window">
         <item name="android:orientation">vertical</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">#000000</item>
     </style>
     <style name="card_option_line">
         <item name="android:orientation">horizontal</item>
@@ -20,49 +20,15 @@
         <item name="android:layout_weight">1</item>
         <item name="android:textSize">40sp</item>
         <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:background">@drawable/background_option_item</item>
     </style>
     <style name="full_card">
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">180sp</item>
-    </style>
-
-    <!-- black on white 1 -->
-    <style name="black_on_white_1_main_window" parent="main_window">
-        <item name="android:background">#000000</item>
-    </style>
-    <style name="black_on_white_1_card_option_item" parent="card_option_item">
         <item name="android:textColor">#000000</item>
-        <item name="android:background">@drawable/background_option_item_bw</item>
+        <item name="android:background">@drawable/background_card_show</item>
     </style>
-    <style name="black_on_white_1_full_card" parent="full_card">
-        <item name="android:textColor">#000000</item>
-        <item name="android:background">@drawable/background_card_show_bw</item>
-    </style>
-
-    <!-- black on white 2 -->
-    <style name="black_on_white_2_full_card" parent="black_on_white_1_full_card">
-        <item name="android:background">#FFFFFF</item>
-    </style>
-
-
-    <!-- white on black 1 -->
-    <style name="white_on_black_1_main_window" parent="main_window">
-        <item name="android:background">#FFFFFF</item>
-    </style>
-    <style name="white_on_black_1_card_option_item" parent="card_option_item">
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">@drawable/background_option_item_wb</item>
-    </style>
-    <style name="white_on_black_1_full_card" parent="full_card">
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">@drawable/background_card_show_wb</item>
-    </style>
-
-    <!-- white on black 2 -->
-    <style name="white_on_black_2_full_card" parent="white_on_black_1_full_card">
-        <item name="android:background">#000000</item>
-    </style>
-
 </resources>

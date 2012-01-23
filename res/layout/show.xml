@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="?mainWindow"
-    android:id="@+id/show_container">
+    android:id="@+id/show_container" style="@style/main_window">
 
 </LinearLayout>
