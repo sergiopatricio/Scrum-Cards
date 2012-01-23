@@ -3,7 +3,7 @@ package pt.samp.scrumCards;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class Information extends Activity {
+public class InformationActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

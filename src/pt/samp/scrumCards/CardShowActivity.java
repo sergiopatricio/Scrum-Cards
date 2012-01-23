@@ -12,7 +12,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 
-public class CardShow extends Activity {
+public class CardShowActivity extends Activity {
     public static final String CARD_TO_SHOW = "pt.samp.scrumCards.CardPosToShow";
 
     private GestureDetector gestureDetector;
@@ -59,7 +59,7 @@ public class CardShow extends Activity {
     private class MyGestureDetector extends SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            CardShow.this.finish();
+            CardShowActivity.this.finish();
             return true;
         }
     }
@@ -75,7 +75,7 @@ public class CardShow extends Activity {
             float difY = Math.abs(e2.getRawY() - e1.getRawY());
 
             if (difY > difX) {
-                CardShow.this.finish();
+                CardShowActivity.this.finish();
                 return true;
             } else {
                 return super.onFling(e1, e2, velocityX, velocityY);

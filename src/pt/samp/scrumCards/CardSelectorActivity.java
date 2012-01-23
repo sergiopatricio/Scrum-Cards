@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class CardSelector extends Activity {
+public class CardSelectorActivity extends Activity {
     private static int PREFERENCES_REQUEST_CODE = 1;
 
     @Override
@@ -53,10 +53,10 @@ public class CardSelector extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()) {
         case R.id.menu_information:
-            startActivity(new Intent(this, Information.class));
+            startActivity(new Intent(this, InformationActivity.class));
             return true;
         case R.id.menu_preferences:
-            startActivityForResult(new Intent(this, Preferences.class), PREFERENCES_REQUEST_CODE);
+            startActivityForResult(new Intent(this, PreferencesActivity.class), PREFERENCES_REQUEST_CODE);
             return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -64,8 +64,8 @@ public class CardSelector extends Activity {
     }
 
     private void showCard(int pos) {
-        Intent intent = new Intent(this, CardShow.class);
-        intent.putExtra(CardShow.CARD_TO_SHOW, pos);
+        Intent intent = new Intent(this, CardShowActivity.class);
+        intent.putExtra(CardShowActivity.CARD_TO_SHOW, pos);
         startActivity(intent);
     }
 

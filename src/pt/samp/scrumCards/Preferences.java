@@ -3,24 +3,15 @@ package pt.samp.scrumCards;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class Preferences extends PreferenceActivity {
+public class Preferences {
     private static boolean scrollCards = false;
     private static boolean showInFullscreen = false;
     private static boolean keepScreenOn = false;
     private static int idTheme = R.style.Theme_black_on_white_1;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Preferences.setWindowFlags(this);
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.preferences);
-    }
 
     /**
      *
