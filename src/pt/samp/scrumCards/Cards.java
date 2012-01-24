@@ -16,6 +16,7 @@ public final class Cards {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         TextView textView = (TextView) inflater.inflate(R.layout.card, parent, false);
         textView.setText(cardValue);
+        Theme.updateFullCard(context, textView);
         return textView;
     }
 }

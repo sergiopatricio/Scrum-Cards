@@ -2,8 +2,17 @@
 <resources>
     <string name="app_name">Scrum Cards</string>
 
+    <string name="menu_theme">Theme</string>
     <string name="menu_information">Information</string>
     <string name="menu_preferences">Preferences</string>
+
+    <string name="theme">Theme</string>
+    <string name="theme_color_background">Background color</string>
+    <string name="theme_color_card">Card color</string>
+    <string name="theme_color_text">Text color</string>
+    <string name="theme_reset">Reset</string>
+    <string name="theme_save">Save</string>
+    <string name="theme_load">Load</string>
 
     <string name="information">About Scrum Cards</string>
     <string name="info_desc1">This is just a simple set of scrum cards.</string>

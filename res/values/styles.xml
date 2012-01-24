@@ -31,4 +31,9 @@
         <item name="android:textColor">#000000</item>
         <item name="android:background">@drawable/background_card_show</item>
     </style>
+
+    <style name="theme_color_button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">200dp</item>
+    </style>
 </resources>

@@ -20,6 +20,7 @@
         <activity android:name=".CardShowActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".PreferencesActivity" />
+        <activity android:name=".ThemeActivity" />
     </application>
 
 </manifest>

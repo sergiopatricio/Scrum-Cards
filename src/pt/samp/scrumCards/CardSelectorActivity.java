@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class CardSelectorActivity extends Activity {
-    private static int PREFERENCES_REQUEST_CODE = 1;
+    private static int REQUEST_CODE_PREFERENCES = 1;
+    private static int REQUEST_CODE_THEME = 2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,8 @@ public class CardSelectorActivity extends Activity {
         Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        Theme.updateCardSelector(this);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -32,11 +35,12 @@ public class CardSelectorActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // check for preferences change
-        if (requestCode == PREFERENCES_REQUEST_CODE && Preferences.loadPreferences(this)) {
+        if (requestCode == REQUEST_CODE_PREFERENCES && Preferences.loadPreferences(this)) {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
+        } else if (requestCode == REQUEST_CODE_THEME) {
+            Theme.updateCardSelector(this);
         }
     }
 
@@ -51,11 +55,14 @@ public class CardSelectorActivity extends Activity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()) {
+        case R.id.menu_theme:
+            startActivityForResult(new Intent(this, ThemeActivity.class), REQUEST_CODE_THEME);
+            return true;
         case R.id.menu_information:
             startActivity(new Intent(this, InformationActivity.class));
             return true;
         case R.id.menu_preferences:
-            startActivityForResult(new Intent(this, PreferencesActivity.class), PREFERENCES_REQUEST_CODE);
+            startActivityForResult(new Intent(this, PreferencesActivity.class), REQUEST_CODE_PREFERENCES);
             return true;
         default:
             return super.onOptionsItemSelected(item);
