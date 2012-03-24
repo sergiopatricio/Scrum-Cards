@@ -70,16 +70,16 @@ public class DatabaseAdapter {
         values.put(COLUMN_CARD_COLOR, Integer.valueOf(theme.getCardColor()));
         values.put(COLUMN_TEXT_COLOR, Integer.valueOf(theme.getTextColor()));
         values.put(COLUMN_FULL_CARD_WITH_BORDER, Boolean.valueOf(theme.isFullCardWithBorder()));
-        return database.insert(DATABASE_NAME, null, values);
+        return database.insert(TABLE_THEMES, null, values);
     }
 
     public boolean deleteTheme(long idTheme) {
-        return database.delete(DATABASE_NAME, COLUMN_ID + "=" + idTheme, null) > 0;
+        return database.delete(TABLE_THEMES, COLUMN_ID + "=" + idTheme, null) > 0;
     }
 
     public List<Theme> getAllThemes() {
         List<Theme> themes = new ArrayList<Theme>();
-        Cursor cursor = database.query(DATABASE_NAME, new String[] { COLUMN_ID, COLUMN_NAME, COLUMN_BACKGROUND_COLOR,
+        Cursor cursor = database.query(TABLE_THEMES, new String[] { COLUMN_ID, COLUMN_NAME, COLUMN_BACKGROUND_COLOR,
                 COLUMN_CARD_COLOR, COLUMN_TEXT_COLOR, COLUMN_FULL_CARD_WITH_BORDER }, null, null, null, null,
                 COLUMN_NAME);
 
@@ -101,7 +101,7 @@ public class DatabaseAdapter {
 
     public List<Theme> getAllThemesNames() {
         List<Theme> themes = new ArrayList<Theme>();
-        Cursor cursor = database.query(DATABASE_NAME, new String[] { COLUMN_ID, COLUMN_NAME }, null, null, null, null,
+        Cursor cursor = database.query(TABLE_THEMES, new String[] { COLUMN_ID, COLUMN_NAME }, null, null, null, null,
                 COLUMN_NAME);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -114,7 +114,7 @@ public class DatabaseAdapter {
     }
 
     public Theme getTheme(long idTheme) throws SQLException {
-        Cursor cursor = database.query(true, DATABASE_NAME, new String[] { COLUMN_ID, COLUMN_NAME,
+        Cursor cursor = database.query(true, TABLE_THEMES, new String[] { COLUMN_ID, COLUMN_NAME,
                 COLUMN_BACKGROUND_COLOR, COLUMN_CARD_COLOR, COLUMN_TEXT_COLOR, COLUMN_FULL_CARD_WITH_BORDER },
                 COLUMN_ID + "=" + idTheme, null, null, null, null, null);
         if (cursor != null) {
@@ -138,6 +138,6 @@ public class DatabaseAdapter {
         values.put(COLUMN_CARD_COLOR, Integer.valueOf(theme.getCardColor()));
         values.put(COLUMN_TEXT_COLOR, Integer.valueOf(theme.getTextColor()));
         values.put(COLUMN_FULL_CARD_WITH_BORDER, Boolean.valueOf(theme.isFullCardWithBorder()));
-        return database.update(DATABASE_NAME, values, COLUMN_ID + "=" + theme.getId(), null) > 0;
+        return database.update(TABLE_THEMES, values, COLUMN_ID + "=" + theme.getId(), null) > 0;
     }
 }
