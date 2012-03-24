@@ -80,7 +80,7 @@ public final class R {
         public static final int theme_color_card=0x7f050006;
         public static final int theme_color_text=0x7f050007;
         public static final int theme_current=0x7f050008;
-        public static final int theme_customized=0x7f050010;
+        public static final int theme_customized_not_saved=0x7f050010;
         public static final int theme_default=0x7f050009;
         public static final int theme_delete=0x7f05000c;
         public static final int theme_info_deleted=0x7f050015;

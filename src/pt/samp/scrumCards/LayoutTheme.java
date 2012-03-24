@@ -15,6 +15,7 @@ public class LayoutTheme {
     private static boolean fullCardWithBorder = Theme.DEFAULT_FULL_CARD_WITH_BORDER;
 
     private static boolean customTheme = false;
+    private static boolean themeSaved = true;
 
 
     public static int getBackgroundColor() {
@@ -23,6 +24,7 @@ public class LayoutTheme {
 
     public static void setBackgroundColor(int backgroundColor) {
         customTheme = true;
+        themeSaved = false;
         LayoutTheme.backgroundColor = backgroundColor;
     }
 
@@ -32,6 +34,7 @@ public class LayoutTheme {
 
     public static void setCardColor(int cardColor) {
         customTheme = true;
+        themeSaved = false;
         LayoutTheme.cardColor = cardColor;
     }
 
@@ -41,6 +44,7 @@ public class LayoutTheme {
 
     public static void setTextColor(int textColor) {
         customTheme = true;
+        themeSaved = false;
         LayoutTheme.textColor = textColor;
     }
 
@@ -50,12 +54,21 @@ public class LayoutTheme {
 
     public static void setFullCardWithBorder(boolean fullCardWithBorder) {
         customTheme = true;
+        themeSaved = false;
         LayoutTheme.fullCardWithBorder = fullCardWithBorder;
     }
 
+    public static boolean isThemeSaved() {
+        return themeSaved;
+    }
 
-    public static void updateBackground(Activity context, LinearLayout mainLayout) {
-        if (!customTheme) {
+    public static void setThemeSaved(boolean themeSaved) {
+        LayoutTheme.themeSaved = themeSaved;
+    }
+
+
+    public static void updateBackground(Activity context, LinearLayout mainLayout, boolean force) {
+        if (!customTheme && !force) {
             return;
         }
         mainLayout.setBackgroundColor(backgroundColor);
@@ -65,7 +78,7 @@ public class LayoutTheme {
         if (!customTheme && !force) {
             return;
         }
-        updateBackground(context, (LinearLayout) context.findViewById(R.id.main_layout));
+        updateBackground(context, (LinearLayout) context.findViewById(R.id.main_layout), force);
 
         PaintDrawable pd = new PaintDrawable();
         pd.getPaint().setColor(cardColor);
@@ -107,6 +120,7 @@ public class LayoutTheme {
         textColor = theme.getTextColor();
         fullCardWithBorder = theme.isFullCardWithBorder();
         customTheme = true;
+        themeSaved = true;
     }
 
     public static void reset() {
@@ -115,6 +129,7 @@ public class LayoutTheme {
         textColor = Theme.DEFAULT_TEXT_COLOR;
         fullCardWithBorder = Theme.DEFAULT_FULL_CARD_WITH_BORDER;
         customTheme = false;
+        themeSaved = true;
     }
 
 }

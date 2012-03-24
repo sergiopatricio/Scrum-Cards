@@ -26,7 +26,7 @@ public class CardShowActivity extends Activity {
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);
 
         LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
-        LayoutTheme.updateBackground(this, view);
+        LayoutTheme.updateBackground(this, view, false);
         View cardView = null;
         if (Preferences.scrollCards()) {
             MyGallery gallery = new MyGallery(this);

@@ -93,13 +93,18 @@ public class ThemeActivity extends Activity {
         databaseAdapter.open(this);
 
         String themeName = getString(R.string.theme_default);
-        long idTheme = Preferences.getIdTheme();
-        if (idTheme != Theme.DEFAULT_THEME_ID) {
-            Theme theme = databaseAdapter.getTheme(idTheme);
-            if (theme != null) {
-                themeName = theme.getName();
+        if (LayoutTheme.isThemeSaved()) {
+            long idTheme = Preferences.getIdTheme();
+            if (idTheme != Theme.DEFAULT_THEME_ID) {
+                Theme theme = databaseAdapter.getTheme(idTheme);
+                if (theme != null) {
+                    themeName = theme.getName();
+                }
             }
+        } else {
+            themeName = getString(R.string.theme_customized_not_saved);
         }
+
         showActiveTheme(themeName);
     }
 
@@ -119,7 +124,7 @@ public class ThemeActivity extends Activity {
                 @Override
                 public void colorChanged(int color) {
                     LayoutTheme.setBackgroundColor(color);
-                    showActiveTheme(getString(R.string.theme_customized));
+                    showActiveTheme(getString(R.string.theme_customized_not_saved));
                 }
             };
             break;
@@ -129,7 +134,7 @@ public class ThemeActivity extends Activity {
                 @Override
                 public void colorChanged(int color) {
                     LayoutTheme.setCardColor(color);
-                    showActiveTheme(getString(R.string.theme_customized));
+                    showActiveTheme(getString(R.string.theme_customized_not_saved));
                 }
             };
             break;
@@ -139,7 +144,7 @@ public class ThemeActivity extends Activity {
                 @Override
                 public void colorChanged(int color) {
                     LayoutTheme.setTextColor(color);
-                    showActiveTheme(getString(R.string.theme_customized));
+                    showActiveTheme(getString(R.string.theme_customized_not_saved));
                 }
             };
             break;
@@ -227,13 +232,17 @@ public class ThemeActivity extends Activity {
         switch (operation) {
         case RESET:
             LayoutTheme.reset();
-            Preferences.setIdTheme(this, idTheme);
+            Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
             showMessage(R.string.theme_info_update_to_default);
             showActiveTheme(getString(R.string.theme_default));
             break;
         case SAVE:
-            if (databaseAdapter.insertTheme(theme) > 0) {
+            long id = databaseAdapter.insertTheme(theme);
+            if (id > 0) {
+                LayoutTheme.update(theme);
+                Preferences.setIdTheme(this, id);
                 showMessage(R.string.theme_info_saved);
+                showActiveTheme(theme.getName());
             } else {
                 showMessage(R.string.theme_info_not_saved);
             }
@@ -248,9 +257,9 @@ public class ThemeActivity extends Activity {
         case DELETE:
             if (databaseAdapter.deleteTheme(idTheme)) {
                 if (idTheme == Preferences.getIdTheme()) {
-                    LayoutTheme.reset();
                     Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
-                    showActiveTheme(getString(R.string.theme_default));
+                    LayoutTheme.setThemeSaved(false);
+                    showActiveTheme(getString(R.string.theme_customized_not_saved));
                 }
                 showMessage(R.string.theme_info_deleted);
             } else {

@@ -18,7 +18,7 @@
     <string name="theme_insert_name">Insert theme name</string>
     <string name="theme_choose_to_load">Choose theme to load</string>
     <string name="theme_choose_to_delete">Choose theme to delete</string>
-    <string name="theme_customized">Customized (not saved)</string>
+    <string name="theme_customized_not_saved">Customized - not saved</string>
 
     <string name="theme_info_update_to_default">Theme update to default.</string>
     <string name="theme_info_saved">Theme saved.</string>
