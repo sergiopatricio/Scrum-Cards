@@ -8,4 +8,4 @@ Features:
 * Scroll cards
 * Fullscreen
 * Keep screen on
-* Themes (default, save, load, delete)
+* Color themes (default, save, load, delete)

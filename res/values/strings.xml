@@ -32,7 +32,7 @@
     <string name="info_features2">- Scroll cards</string>
     <string name="info_features3">- Fullscreen</string>
     <string name="info_features4">- Keep screen on</string>
-    <string name="info_features5">- Themes (default, save, load, delete)</string>
+    <string name="info_features5">- Color themes (default, save, load, delete)</string>
 
     <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>
