@@ -32,8 +32,22 @@
         <item name="android:background">@drawable/background_card_show</item>
     </style>
 
-    <style name="theme_color_button">
+    <style name="theme_color_buttons" parent="main_window">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="theme_operation_buttons" parent="main_window">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="theme_button">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">200dp</item>
+        <item name="android:layout_margin">5dp</item>
     </style>
 </resources>

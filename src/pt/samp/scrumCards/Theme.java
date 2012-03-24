@@ -20,7 +20,7 @@ public class Theme {
     private static int textColor = DEFAULT_TEXT_COLOR;
     private static boolean fullCardWithBorder = DEFAULT_FULL_CARD_WITH_BORDER;
 
-    private static boolean defaultThemeActive = true;
+    private static boolean defaultThemeActive = false;
     private static boolean themeChanged = false;
 
 
@@ -104,7 +104,7 @@ public class Theme {
         if (defaultThemeActive) {
             return;
         }
-        //TODO: fullCardWithBorder
+        //TODO: option for full card without border
         textView.setTextColor(textColor);
         GradientDrawable gd = new GradientDrawable();
         gd.setColor(cardColor);
@@ -118,6 +118,7 @@ public class Theme {
         cardColor = DEFAULT_CARD_COLOR;
         textColor = DEFAULT_TEXT_COLOR;
         fullCardWithBorder = DEFAULT_FULL_CARD_WITH_BORDER;
+        themeChanged = false;
     }
 
 }

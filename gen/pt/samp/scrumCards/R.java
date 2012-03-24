@@ -19,6 +19,7 @@ public final class R {
         public static final int button_color_background=0x7f08000f;
         public static final int button_color_card=0x7f080010;
         public static final int button_color_text=0x7f080011;
+        public static final int button_theme_delete=0x7f080015;
         public static final int button_theme_load=0x7f080014;
         public static final int button_theme_reset=0x7f080012;
         public static final int button_theme_save=0x7f080013;
@@ -36,9 +37,9 @@ public final class R {
         public static final int cardq=0x7f08000d;
         public static final int full_card=0x7f080000;
         public static final int main_layout=0x7f080001;
-        public static final int menu_information=0x7f080016;
-        public static final int menu_preferences=0x7f080017;
-        public static final int menu_theme=0x7f080015;
+        public static final int menu_information=0x7f080017;
+        public static final int menu_preferences=0x7f080018;
+        public static final int menu_theme=0x7f080016;
         public static final int show_container=0x7f08000e;
     }
     public static final class layout {
@@ -53,22 +54,29 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
-        public static final int info_desc1=0x7f05000c;
-        public static final int info_desc2=0x7f05000d;
-        public static final int info_desc3=0x7f05000e;
-        public static final int information=0x7f05000b;
+        public static final int cancel=0x7f05001a;
+        public static final int info_desc1=0x7f050011;
+        public static final int info_desc2=0x7f050012;
+        public static final int info_desc3=0x7f050013;
+        public static final int information=0x7f050010;
         public static final int menu_information=0x7f050002;
         public static final int menu_preferences=0x7f050003;
         public static final int menu_theme=0x7f050001;
-        public static final int preference_fullscreen=0x7f050012;
-        public static final int preference_keep_screen_on=0x7f050013;
-        public static final int preference_scroll_cards_description=0x7f050011;
-        public static final int preference_scroll_cards_tittle=0x7f050010;
-        public static final int preferences=0x7f05000f;
+        public static final int ok=0x7f050019;
+        public static final int preference_fullscreen=0x7f050017;
+        public static final int preference_keep_screen_on=0x7f050018;
+        public static final int preference_scroll_cards_description=0x7f050016;
+        public static final int preference_scroll_cards_tittle=0x7f050015;
+        public static final int preferences=0x7f050014;
         public static final int theme=0x7f050004;
+        public static final int theme_choose_to_delete=0x7f05000e;
+        public static final int theme_choose_to_load=0x7f05000d;
         public static final int theme_color_background=0x7f050005;
         public static final int theme_color_card=0x7f050006;
         public static final int theme_color_text=0x7f050007;
+        public static final int theme_default=0x7f05000f;
+        public static final int theme_delete=0x7f05000b;
+        public static final int theme_insert_name=0x7f05000c;
         public static final int theme_load=0x7f05000a;
         public static final int theme_reset=0x7f050008;
         public static final int theme_save=0x7f050009;
@@ -78,7 +86,9 @@ public final class R {
         public static final int card_option_line=0x7f060001;
         public static final int full_card=0x7f060003;
         public static final int main_window=0x7f060000;
-        public static final int theme_color_button=0x7f060004;
+        public static final int theme_button=0x7f060006;
+        public static final int theme_color_buttons=0x7f060004;
+        public static final int theme_operation_buttons=0x7f060005;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

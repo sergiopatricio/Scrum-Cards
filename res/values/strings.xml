@@ -13,6 +13,11 @@
     <string name="theme_reset">Reset</string>
     <string name="theme_save">Save</string>
     <string name="theme_load">Load</string>
+    <string name="theme_delete">Delete</string>
+    <string name="theme_insert_name">Insert theme name</string>
+    <string name="theme_choose_to_load">Choose theme to load</string>
+    <string name="theme_choose_to_delete">Choose theme to delete</string>
+    <string name="theme_default">Default</string>
 
     <string name="information">About Scrum Cards</string>
     <string name="info_desc1">This is just a simple set of scrum cards.</string>
@@ -24,5 +29,8 @@
     <string name="preference_scroll_cards_description">Scroll cards on horizontal swype</string>
     <string name="preference_fullscreen">Fullscreen</string>
     <string name="preference_keep_screen_on">Keep screen on</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
