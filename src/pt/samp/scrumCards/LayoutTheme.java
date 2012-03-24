@@ -2,7 +2,6 @@ package pt.samp.scrumCards;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.PaintDrawable;
 import android.util.TypedValue;
@@ -10,15 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class LayoutTheme {
-    private static int DEFAULT_BACKGROUND_COLOR = Color.BLACK;
-    private static int DEFAULT_CARD_COLOR = Color.WHITE;
-    private static int DEFAULT_TEXT_COLOR = Color.BLACK;
-    private static boolean DEFAULT_FULL_CARD_WITH_BORDER = true;
-
-    private static int backgroundColor = DEFAULT_BACKGROUND_COLOR;
-    private static int cardColor = DEFAULT_CARD_COLOR;
-    private static int textColor = DEFAULT_TEXT_COLOR;
-    private static boolean fullCardWithBorder = DEFAULT_FULL_CARD_WITH_BORDER;
+    private static int backgroundColor = Theme.DEFAULT_BACKGROUND_COLOR;
+    private static int cardColor = Theme.DEFAULT_CARD_COLOR;
+    private static int textColor = Theme.DEFAULT_TEXT_COLOR;
+    private static boolean fullCardWithBorder = Theme.DEFAULT_FULL_CARD_WITH_BORDER;
 
     private static boolean defaultThemeActive = false;
     private static boolean themeChanged = false;
@@ -114,10 +108,10 @@ public class LayoutTheme {
     }
 
     public static void reset() {
-        backgroundColor = DEFAULT_BACKGROUND_COLOR;
-        cardColor = DEFAULT_CARD_COLOR;
-        textColor = DEFAULT_TEXT_COLOR;
-        fullCardWithBorder = DEFAULT_FULL_CARD_WITH_BORDER;
+        backgroundColor = Theme.DEFAULT_BACKGROUND_COLOR;
+        cardColor = Theme.DEFAULT_CARD_COLOR;
+        textColor = Theme.DEFAULT_TEXT_COLOR;
+        fullCardWithBorder = Theme.DEFAULT_FULL_CARD_WITH_BORDER;
         themeChanged = false;
     }
 
