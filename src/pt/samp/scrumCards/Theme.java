@@ -49,6 +49,10 @@ public class Theme {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getBackgroundColor() {
         return backgroundColor;
     }

@@ -14,8 +14,7 @@ public class LayoutTheme {
     private static int textColor = Theme.DEFAULT_TEXT_COLOR;
     private static boolean fullCardWithBorder = Theme.DEFAULT_FULL_CARD_WITH_BORDER;
 
-    private static boolean defaultThemeActive = false;
-    private static boolean themeChanged = false;
+    private static boolean customTheme = false;
 
 
     public static int getBackgroundColor() {
@@ -23,7 +22,7 @@ public class LayoutTheme {
     }
 
     public static void setBackgroundColor(int backgroundColor) {
-        themeChanged = true;
+        customTheme = true;
         LayoutTheme.backgroundColor = backgroundColor;
     }
 
@@ -32,7 +31,7 @@ public class LayoutTheme {
     }
 
     public static void setCardColor(int cardColor) {
-        themeChanged = true;
+        customTheme = true;
         LayoutTheme.cardColor = cardColor;
     }
 
@@ -41,7 +40,7 @@ public class LayoutTheme {
     }
 
     public static void setTextColor(int textColor) {
-        themeChanged = true;
+        customTheme = true;
         LayoutTheme.textColor = textColor;
     }
 
@@ -50,33 +49,20 @@ public class LayoutTheme {
     }
 
     public static void setFullCardWithBorder(boolean fullCardWithBorder) {
-        themeChanged = true;
+        customTheme = true;
         LayoutTheme.fullCardWithBorder = fullCardWithBorder;
     }
 
-    public static boolean isDefaultThemeActive() {
-        return defaultThemeActive;
-    }
-
-    public static void setDefaultThemeActive(boolean defaultThemeActive) {
-        LayoutTheme.defaultThemeActive = defaultThemeActive;
-    }
-
-    public static boolean isThemeChanged() {
-        return themeChanged;
-    }
-
-
 
     public static void updateBackground(Activity context, LinearLayout mainLayout) {
-        if (defaultThemeActive) {
+        if (!customTheme) {
             return;
         }
         mainLayout.setBackgroundColor(backgroundColor);
     }
 
-    public static void updateCardSelector(Activity context) {
-        if (defaultThemeActive) {
+    public static void updateCardSelector(Activity context, boolean force) {
+        if (!customTheme && !force) {
             return;
         }
         updateBackground(context, (LinearLayout) context.findViewById(R.id.main_layout));
@@ -95,10 +81,10 @@ public class LayoutTheme {
     }
 
     public static void updateFullCard(Context context, TextView textView) {
-        if (defaultThemeActive) {
+        if (!customTheme) {
             return;
         }
-        //TODO: option for full card without border
+        //TODO: option for full card without border (fullCardWithBorder)
         textView.setTextColor(textColor);
         GradientDrawable gd = new GradientDrawable();
         gd.setColor(cardColor);
@@ -107,12 +93,28 @@ public class LayoutTheme {
         textView.setBackgroundDrawable(gd);
     }
 
+    public static Theme getTheme() {
+        return Theme.builder().backgroundColor(getBackgroundColor())
+                              .cardColor(getCardColor())
+                              .textColor(getTextColor())
+                              .fullCardWithBorder(isFullCardWithBorder())
+                              .build();
+    }
+
+    public static void update(Theme theme) {
+        backgroundColor = theme.getBackgroundColor();
+        cardColor = theme.getCardColor();
+        textColor = theme.getTextColor();
+        fullCardWithBorder = theme.isFullCardWithBorder();
+        customTheme = true;
+    }
+
     public static void reset() {
         backgroundColor = Theme.DEFAULT_BACKGROUND_COLOR;
         cardColor = Theme.DEFAULT_CARD_COLOR;
         textColor = Theme.DEFAULT_TEXT_COLOR;
         fullCardWithBorder = Theme.DEFAULT_FULL_CARD_WITH_BORDER;
-        themeChanged = false;
+        customTheme = false;
     }
 
 }

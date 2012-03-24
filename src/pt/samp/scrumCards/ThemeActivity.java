@@ -1,9 +1,10 @@
 package pt.samp.scrumCards;
 
+import java.util.List;
+
 import pt.samp.scrumCards.ColorPickerDialog.OnColorChangedListener;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -18,11 +19,20 @@ public class ThemeActivity extends Activity {
         BACKGROUND, CARD, TEXT
     }
 
+    private enum ThemeOperation {
+
+        RESET, SAVE, LOAD, DELETE
+    }
+
+    DatabaseAdapter databaseAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.theme);
+
+        databaseAdapter = new DatabaseAdapter();
 
         Button button = (Button) findViewById(R.id.button_color_background);
         button.setOnClickListener(new View.OnClickListener() {
@@ -48,31 +58,43 @@ public class ThemeActivity extends Activity {
         button = (Button) findViewById(R.id.button_theme_reset);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                LayoutTheme.reset();
+                processThemeOperation(ThemeOperation.RESET, null);
             }
         });
 
         button = (Button) findViewById(R.id.button_theme_save);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                saveTheme();
+                startSaveTheme();
             }
         });
 
         button = (Button) findViewById(R.id.button_theme_load);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                loadTheme();
+                selectThemeFor(ThemeOperation.LOAD);
             }
         });
 
         button = (Button) findViewById(R.id.button_theme_delete);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                deleteTheme();
+                selectThemeFor(ThemeOperation.DELETE);
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        databaseAdapter.open(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        databaseAdapter.close();
     }
 
     private void updateColorOption(ColorOption option) {
@@ -125,11 +147,10 @@ public class ThemeActivity extends Activity {
         };
     }
 
-    private void saveTheme() {
+    private void startSaveTheme() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.theme));
         builder.setMessage(getString(R.string.theme_insert_name));
-
 
         final EditText inputText = new EditText(this);
         inputText.setFilters(new InputFilter[] { getSimpleInputFilter() });
@@ -137,7 +158,9 @@ public class ThemeActivity extends Activity {
 
         builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                //inputText.getText().toString().trim()
+                Theme theme = LayoutTheme.getTheme();
+                theme.setName(inputText.getText().toString().trim());
+                processThemeOperation(ThemeOperation.SAVE, theme);
             }
         });
         builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
@@ -145,23 +168,36 @@ public class ThemeActivity extends Activity {
                 // nothing to do
             }
         });
-
-        Dialog dialog = builder.create();
-        dialog.show();
+        builder.create().show();
     }
 
-    private void loadTheme() {
-        //TODO: load this from DB (and include default theme option)
-        String[] names = new String[] { getString(R.string.theme_default) };
-        int[] ids = new int[] { 0 };
 
+    private void selectThemeFor(final ThemeOperation operation) {
+        List<Theme> themes = databaseAdapter.getAllThemesNames();
+        final String[] names = new String[themes.size()];
+        final long[] ids = new long[themes.size()];
+
+        int i = 0;
+        for (Theme theme : themes) {
+            names[i] = theme.getName();
+            ids[i] = theme.getId();
+            i++;
+        }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle(getString(R.string.theme_choose_to_load));
+        switch (operation) {
+        case LOAD:
+            builder.setTitle(getString(R.string.theme_choose_to_load));
+            break;
+        case DELETE:
+            builder.setTitle(getString(R.string.theme_choose_to_delete));
+            break;
+        default:
+            break;
+        }
         builder.setItems(names, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-              //ids[item]
+                processThemeOperation(operation, databaseAdapter.getTheme(ids[item]));
             }
         });
         builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
@@ -169,13 +205,29 @@ public class ThemeActivity extends Activity {
                 // nothing to do
             }
         });
-        Dialog dialog = builder.create();
-        dialog.show();
+        builder.create().show();
     }
 
-    private void deleteTheme() {
-
+    private void processThemeOperation(ThemeOperation operation, Theme theme) {
+        //TODO: notifications and error treatment
+        switch (operation) {
+        case RESET:
+            LayoutTheme.reset();
+            Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
+            break;
+        case SAVE:
+            databaseAdapter.insertTheme(theme);
+            break;
+        case LOAD:
+            LayoutTheme.update(theme);
+            Preferences.setIdTheme(this, theme.getId());
+            break;
+        case DELETE:
+            databaseAdapter.deleteTheme(theme.getId());
+            break;
+        default:
+            break;
+        }
     }
-
 
 }

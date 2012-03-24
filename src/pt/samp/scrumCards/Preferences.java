@@ -8,26 +8,34 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class Preferences {
+    private static final String PREFERENCE_SCROLL_CARDS = "scroll_cards";
+    private static final String PREFERENCE_FULLSCREEN = "fullscreen";
+    private static final String PREFERENCE_KEEP_SCREEN_ON = "keep_screen_on";
+    private static final String PREFERENCE_ID_THEME = "id_theme";
+
     private static boolean scrollCards = false;
     private static boolean showInFullscreen = false;
     private static boolean keepScreenOn = false;
+    private static long idTheme = Theme.DEFAULT_THEME_ID;
 
     /**
-     *
-     * @param context
      * @return true if some preference changed, false if nothing changed
      */
     public static boolean loadPreferences(Context context) {
         boolean oldScrollCards = scrollCards;
         boolean oldShowInFullscreen = showInFullscreen;
         boolean oldKeepScreenOn = keepScreenOn;
+        long oldIdTheme = idTheme;
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        scrollCards = sharedPreferences.getBoolean("scroll_cards", false);
-        showInFullscreen = sharedPreferences.getBoolean("fullscreen", false);
-        keepScreenOn = sharedPreferences.getBoolean("keep_screen_on", false);
 
-        if (oldScrollCards != scrollCards || oldShowInFullscreen != showInFullscreen || oldKeepScreenOn != keepScreenOn) {
+        scrollCards = sharedPreferences.getBoolean(PREFERENCE_SCROLL_CARDS, false);
+        showInFullscreen = sharedPreferences.getBoolean(PREFERENCE_FULLSCREEN, false);
+        keepScreenOn = sharedPreferences.getBoolean(PREFERENCE_KEEP_SCREEN_ON, false);
+        idTheme = sharedPreferences.getLong(PREFERENCE_ID_THEME, Theme.DEFAULT_THEME_ID);
+
+        if (oldScrollCards != scrollCards || oldShowInFullscreen != showInFullscreen || oldKeepScreenOn != keepScreenOn
+                || oldIdTheme != idTheme) {
             return true;
         }
         return false;
@@ -45,6 +53,18 @@ public class Preferences {
         return keepScreenOn;
     }
 
+    public static long getIdTheme() {
+        return idTheme;
+    }
+
+    public static void setIdTheme(Context context, long idTheme) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putLong(PREFERENCE_ID_THEME, idTheme);
+        editor.commit();
+        Preferences.idTheme = idTheme;
+    }
+
     public static void setWindowFlags(Activity activity) {
         if (showInFullscreen) {
             activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -54,4 +74,5 @@ public class Preferences {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }
+
 }

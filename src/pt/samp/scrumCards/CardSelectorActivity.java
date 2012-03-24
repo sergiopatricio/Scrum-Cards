@@ -20,7 +20,8 @@ public class CardSelectorActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        LayoutTheme.updateCardSelector(this);
+        loadLayoutTheme();
+        LayoutTheme.updateCardSelector(this, false);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -40,7 +41,7 @@ public class CardSelectorActivity extends Activity {
             finish();
             startActivity(intent);
         } else if (requestCode == REQUEST_CODE_THEME) {
-            LayoutTheme.updateCardSelector(this);
+            LayoutTheme.updateCardSelector(this, true);
         }
     }
 
@@ -73,6 +74,21 @@ public class CardSelectorActivity extends Activity {
         Intent intent = new Intent(this, CardShowActivity.class);
         intent.putExtra(CardShowActivity.CARD_TO_SHOW, pos);
         startActivity(intent);
+    }
+
+    private void loadLayoutTheme() {
+        long idTheme = Preferences.getIdTheme();
+        if (idTheme != Theme.DEFAULT_THEME_ID) {
+            DatabaseAdapter databaseAdapter = new DatabaseAdapter();
+            databaseAdapter.open(this);
+            Theme theme = databaseAdapter.getTheme(idTheme);
+            databaseAdapter.close();
+            if (theme != null) {
+                LayoutTheme.update(theme);
+                return;
+            }
+        }
+        LayoutTheme.reset();
     }
 
 }

@@ -113,12 +113,14 @@ public class DatabaseAdapter {
         return themes;
     }
 
-    public Theme getTheme(long idTheme) throws SQLException {
+    public Theme getTheme(long idTheme) {
         Cursor cursor = database.query(true, TABLE_THEMES, new String[] { COLUMN_ID, COLUMN_NAME,
                 COLUMN_BACKGROUND_COLOR, COLUMN_CARD_COLOR, COLUMN_TEXT_COLOR, COLUMN_FULL_CARD_WITH_BORDER },
                 COLUMN_ID + "=" + idTheme, null, null, null, null, null);
         if (cursor != null) {
-            cursor.moveToFirst();
+            if (!cursor.moveToFirst()) {
+                return null;
+            }
             int i = 0;
             return Theme.builder().id(cursor.getLong(i++))
                                   .name(cursor.getString(i++))
