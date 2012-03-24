@@ -5,6 +5,7 @@
       <Button style="@style/theme_button" android:id="@+id/button_color_background" android:text="@string/theme_color_background"/>
       <Button style="@style/theme_button" android:id="@+id/button_color_card" android:text="@string/theme_color_card"/>
       <Button style="@style/theme_button" android:id="@+id/button_color_text" android:text="@string/theme_color_text"/>
+      <CheckBox style="@style/theme_checkbox" android:id="@+id/check_full_card_with_border" android:text="@string/theme_full_card_with_border"/>
     </LinearLayout>
     <LinearLayout style="@style/theme_operation_buttons">
       <TextView style="@style/info_line" android:id="@+id/current_theme_name" android:text=""/>

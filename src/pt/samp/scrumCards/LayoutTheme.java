@@ -97,13 +97,17 @@ public class LayoutTheme {
         if (!customTheme) {
             return;
         }
-        //TODO: option for full card without border (fullCardWithBorder)
+
         textView.setTextColor(textColor);
-        GradientDrawable gd = new GradientDrawable();
-        gd.setColor(cardColor);
-        gd.setCornerRadius(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, context.getResources().getDisplayMetrics()));
-        gd.setStroke((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, context.getResources().getDisplayMetrics()), backgroundColor);
-        textView.setBackgroundDrawable(gd);
+        if (fullCardWithBorder) {
+            GradientDrawable gd = new GradientDrawable();
+            gd.setColor(cardColor);
+            gd.setCornerRadius(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, context.getResources().getDisplayMetrics()));
+            gd.setStroke((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, context.getResources().getDisplayMetrics()), backgroundColor);
+            textView.setBackgroundDrawable(gd);
+        } else {
+            textView.setBackgroundColor(cardColor);
+        }
     }
 
     public static Theme getTheme() {

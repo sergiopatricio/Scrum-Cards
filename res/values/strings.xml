@@ -7,9 +7,10 @@
     <string name="menu_preferences">Preferences</string>
 
     <string name="theme">Theme</string>
-    <string name="theme_color_background">Background color</string>
+    <string name="theme_color_background">Background (border) color</string>
     <string name="theme_color_card">Card color</string>
     <string name="theme_color_text">Text color</string>
+    <string name="theme_full_card_with_border">Show border in full card view</string>
     <string name="theme_current">Current theme: %1$s</string>
     <string name="theme_default">Default</string>
     <string name="theme_save">Save</string>

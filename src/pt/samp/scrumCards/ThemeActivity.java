@@ -11,6 +11,7 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +57,15 @@ public class ThemeActivity extends Activity {
                 updateColorOption(ColorOption.TEXT);
             }
         });
+
+        CheckBox checkBox = (CheckBox) findViewById(R.id.check_full_card_with_border);
+        checkBox.setChecked(LayoutTheme.isFullCardWithBorder());
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                updateFullCardWithBorder(((CheckBox) view).isChecked());
+            }
+        });
+
 
         button = (Button) findViewById(R.id.button_theme_default);
         button.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +162,11 @@ public class ThemeActivity extends Activity {
             return;
         }
         (new ColorPickerDialog(this, listener, color)).show();
+    }
+
+    private void updateFullCardWithBorder(boolean fullCardWihBorder) {
+        LayoutTheme.setFullCardWithBorder(fullCardWihBorder);
+        showActiveTheme(getString(R.string.theme_customized_not_saved));
     }
 
     private InputFilter getSimpleInputFilter() {
