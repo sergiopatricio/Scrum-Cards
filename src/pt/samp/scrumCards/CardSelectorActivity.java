@@ -20,7 +20,7 @@ public class CardSelectorActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        Theme.updateCardSelector(this);
+        LayoutTheme.updateCardSelector(this);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -40,7 +40,7 @@ public class CardSelectorActivity extends Activity {
             finish();
             startActivity(intent);
         } else if (requestCode == REQUEST_CODE_THEME) {
-            Theme.updateCardSelector(this);
+            LayoutTheme.updateCardSelector(this);
         }
     }
 

@@ -49,7 +49,7 @@ public class ThemeActivity extends Activity {
         button = (Button) findViewById(R.id.button_theme_reset);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Theme.reset();
+                LayoutTheme.reset();
             }
         });
 
@@ -81,29 +81,29 @@ public class ThemeActivity extends Activity {
         int color;
         switch (option) {
         case BACKGROUND:
-            color = Theme.getBackgroundColor();
+            color = LayoutTheme.getBackgroundColor();
             listener = new OnColorChangedListener() {
                 @Override
                 public void colorChanged(int color) {
-                    Theme.setBackgroundColor(color);
+                    LayoutTheme.setBackgroundColor(color);
                 }
             };
             break;
         case CARD:
-            color = Theme.getCardColor();
+            color = LayoutTheme.getCardColor();
             listener = new OnColorChangedListener() {
                 @Override
                 public void colorChanged(int color) {
-                    Theme.setCardColor(color);
+                    LayoutTheme.setCardColor(color);
                 }
             };
             break;
         case TEXT:
-            color = Theme.getTextColor();
+            color = LayoutTheme.getTextColor();
             listener = new OnColorChangedListener() {
                 @Override
                 public void colorChanged(int color) {
-                    Theme.setTextColor(color);
+                    LayoutTheme.setTextColor(color);
                 }
             };
             break;

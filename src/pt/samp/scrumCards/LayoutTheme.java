@@ -9,7 +9,7 @@ import android.util.TypedValue;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Theme {
+public class LayoutTheme {
     private static int DEFAULT_BACKGROUND_COLOR = Color.BLACK;
     private static int DEFAULT_CARD_COLOR = Color.WHITE;
     private static int DEFAULT_TEXT_COLOR = Color.BLACK;
@@ -30,7 +30,7 @@ public class Theme {
 
     public static void setBackgroundColor(int backgroundColor) {
         themeChanged = true;
-        Theme.backgroundColor = backgroundColor;
+        LayoutTheme.backgroundColor = backgroundColor;
     }
 
     public static int getCardColor() {
@@ -39,7 +39,7 @@ public class Theme {
 
     public static void setCardColor(int cardColor) {
         themeChanged = true;
-        Theme.cardColor = cardColor;
+        LayoutTheme.cardColor = cardColor;
     }
 
     public static int getTextColor() {
@@ -48,7 +48,7 @@ public class Theme {
 
     public static void setTextColor(int textColor) {
         themeChanged = true;
-        Theme.textColor = textColor;
+        LayoutTheme.textColor = textColor;
     }
 
     public static boolean isFullCardWithBorder() {
@@ -57,7 +57,7 @@ public class Theme {
 
     public static void setFullCardWithBorder(boolean fullCardWithBorder) {
         themeChanged = true;
-        Theme.fullCardWithBorder = fullCardWithBorder;
+        LayoutTheme.fullCardWithBorder = fullCardWithBorder;
     }
 
     public static boolean isDefaultThemeActive() {
@@ -65,7 +65,7 @@ public class Theme {
     }
 
     public static void setDefaultThemeActive(boolean defaultThemeActive) {
-        Theme.defaultThemeActive = defaultThemeActive;
+        LayoutTheme.defaultThemeActive = defaultThemeActive;
     }
 
     public static boolean isThemeChanged() {
