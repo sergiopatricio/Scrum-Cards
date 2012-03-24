@@ -18,7 +18,7 @@ public class CardShowActivity extends Activity {
     private GestureDetector gestureDetector;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);

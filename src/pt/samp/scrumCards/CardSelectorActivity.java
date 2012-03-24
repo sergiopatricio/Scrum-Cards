@@ -14,7 +14,7 @@ public class CardSelectorActivity extends Activity {
     private static int REQUEST_CODE_THEME = 2;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         Preferences.loadPreferences(this);
         Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);

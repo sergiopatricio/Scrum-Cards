@@ -29,7 +29,6 @@ public class DatabaseAdapter {
             COLUMN_TEXT_COLOR + " integer not null, " +
             COLUMN_FULL_CARD_WITH_BORDER + " integer not null);";
 
-    private final Context context;
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
 
@@ -51,12 +50,11 @@ public class DatabaseAdapter {
         }
     }
 
-    public DatabaseAdapter(Context context) {
-        this.context = context;
+    public DatabaseAdapter() {
     }
 
 
-    public void open() throws SQLException {
+    public void open(Context context) throws SQLException {
         databaseHelper = new DatabaseHelper(context);
         database = databaseHelper.getWritableDatabase();
     }

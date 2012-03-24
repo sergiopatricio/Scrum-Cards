@@ -6,7 +6,7 @@ import android.os.Bundle;
 public class InformationActivity extends Activity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);

@@ -19,11 +19,10 @@ public class ThemeActivity extends Activity {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         Preferences.setWindowFlags(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.theme);
-
 
         Button button = (Button) findViewById(R.id.button_color_background);
         button.setOnClickListener(new View.OnClickListener() {
