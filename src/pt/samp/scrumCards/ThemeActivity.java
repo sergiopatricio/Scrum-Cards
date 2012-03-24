@@ -12,6 +12,7 @@ import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ThemeActivity extends Activity {
@@ -90,6 +91,16 @@ public class ThemeActivity extends Activity {
     protected void onResume() {
         super.onResume();
         databaseAdapter.open(this);
+
+        String themeName = getString(R.string.theme_default);
+        long idTheme = Preferences.getIdTheme();
+        if (idTheme != Theme.DEFAULT_THEME_ID) {
+            Theme theme = databaseAdapter.getTheme(idTheme);
+            if (theme != null) {
+                themeName = theme.getName();
+            }
+        }
+        showActiveTheme(themeName);
     }
 
     @Override
@@ -108,6 +119,7 @@ public class ThemeActivity extends Activity {
                 @Override
                 public void colorChanged(int color) {
                     LayoutTheme.setBackgroundColor(color);
+                    showActiveTheme(getString(R.string.theme_customized));
                 }
             };
             break;
@@ -117,6 +129,7 @@ public class ThemeActivity extends Activity {
                 @Override
                 public void colorChanged(int color) {
                     LayoutTheme.setCardColor(color);
+                    showActiveTheme(getString(R.string.theme_customized));
                 }
             };
             break;
@@ -126,6 +139,7 @@ public class ThemeActivity extends Activity {
                 @Override
                 public void colorChanged(int color) {
                     LayoutTheme.setTextColor(color);
+                    showActiveTheme(getString(R.string.theme_customized));
                 }
             };
             break;
@@ -215,6 +229,7 @@ public class ThemeActivity extends Activity {
             LayoutTheme.reset();
             Preferences.setIdTheme(this, idTheme);
             showMessage(R.string.theme_info_update_to_default);
+            showActiveTheme(getString(R.string.theme_default));
             break;
         case SAVE:
             if (databaseAdapter.insertTheme(theme) > 0) {
@@ -228,12 +243,14 @@ public class ThemeActivity extends Activity {
             LayoutTheme.update(newTheme);
             Preferences.setIdTheme(this, newTheme.getId());
             showMessage(R.string.theme_info_loaded);
+            showActiveTheme(newTheme.getName());
             break;
         case DELETE:
             if (databaseAdapter.deleteTheme(idTheme)) {
                 if (idTheme == Preferences.getIdTheme()) {
                     LayoutTheme.reset();
                     Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
+                    showActiveTheme(getString(R.string.theme_default));
                 }
                 showMessage(R.string.theme_info_deleted);
             } else {
@@ -247,6 +264,11 @@ public class ThemeActivity extends Activity {
 
     private void showMessage(int id) {
         Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
+    }
+
+    private void showActiveTheme(String name) {
+        TextView textView = (TextView) findViewById(R.id.current_theme_name);
+        textView.setText(getString(R.string.theme_current, name));
     }
 
 }

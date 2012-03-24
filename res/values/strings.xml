@@ -10,6 +10,7 @@
     <string name="theme_color_background">Background color</string>
     <string name="theme_color_card">Card color</string>
     <string name="theme_color_text">Text color</string>
+    <string name="theme_current">Current theme: %1$s</string>
     <string name="theme_default">Default</string>
     <string name="theme_save">Save</string>
     <string name="theme_load">Load</string>
@@ -17,6 +18,7 @@
     <string name="theme_insert_name">Insert theme name</string>
     <string name="theme_choose_to_load">Choose theme to load</string>
     <string name="theme_choose_to_delete">Choose theme to delete</string>
+    <string name="theme_customized">Customized (not saved)</string>
 
     <string name="theme_info_update_to_default">Theme update to default.</string>
     <string name="theme_info_saved">Theme saved.</string>
