@@ -98,16 +98,19 @@ public final class R {
     public static final class style {
         public static final int card_option_item=0x7f060002;
         public static final int card_option_line=0x7f060001;
+        public static final int content_window=0x7f060004;
+        public static final int content_window_horizontal=0x7f06000c;
         public static final int full_card=0x7f060003;
-        public static final int info_line=0x7f06000a;
-        public static final int info_line1=0x7f06000b;
-        public static final int info_title=0x7f060009;
-        public static final int info_window=0x7f060008;
+        public static final int line=0x7f060006;
+        public static final int line1=0x7f060007;
         public static final int main_window=0x7f060000;
-        public static final int theme_button=0x7f060006;
-        public static final int theme_checkbox=0x7f060007;
-        public static final int theme_color_buttons=0x7f060004;
-        public static final int theme_operation_buttons=0x7f060005;
+        public static final int theme_button=0x7f06000a;
+        public static final int theme_checkbox=0x7f06000b;
+        public static final int theme_color_buttons=0x7f060008;
+        public static final int theme_color_buttons_horizontal=0x7f06000d;
+        public static final int theme_operation_buttons=0x7f060009;
+        public static final int theme_operation_buttons_horizontal=0x7f06000e;
+        public static final int title=0x7f060005;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

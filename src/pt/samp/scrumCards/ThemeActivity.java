@@ -248,6 +248,8 @@ public class ThemeActivity extends Activity {
         case RESET:
             LayoutTheme.reset();
             Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
+            CheckBox checkBox = (CheckBox) findViewById(R.id.check_full_card_with_border);
+            checkBox.setChecked(LayoutTheme.isFullCardWithBorder());
             showMessage(R.string.theme_info_update_to_default);
             showActiveTheme(getString(R.string.theme_default));
             break;
