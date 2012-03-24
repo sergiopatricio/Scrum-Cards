@@ -12,6 +12,7 @@ import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ThemeActivity extends Activity {
 
@@ -55,10 +56,10 @@ public class ThemeActivity extends Activity {
             }
         });
 
-        button = (Button) findViewById(R.id.button_theme_reset);
+        button = (Button) findViewById(R.id.button_theme_default);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                processThemeOperation(ThemeOperation.RESET, null);
+                processThemeOperation(ThemeOperation.RESET, Theme.DEFAULT_THEME_ID, null);
             }
         });
 
@@ -160,7 +161,7 @@ public class ThemeActivity extends Activity {
             public void onClick(DialogInterface dialog, int whichButton) {
                 Theme theme = LayoutTheme.getTheme();
                 theme.setName(inputText.getText().toString().trim());
-                processThemeOperation(ThemeOperation.SAVE, theme);
+                processThemeOperation(ThemeOperation.SAVE, Theme.DEFAULT_THEME_ID, theme);
             }
         });
         builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
@@ -197,7 +198,7 @@ public class ThemeActivity extends Activity {
         }
         builder.setItems(names, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-                processThemeOperation(operation, databaseAdapter.getTheme(ids[item]));
+                processThemeOperation(operation, ids[item], null);
             }
         });
         builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
@@ -208,26 +209,44 @@ public class ThemeActivity extends Activity {
         builder.create().show();
     }
 
-    private void processThemeOperation(ThemeOperation operation, Theme theme) {
-        //TODO: notifications and error treatment
+    private void processThemeOperation(ThemeOperation operation, long idTheme, Theme theme) {
         switch (operation) {
         case RESET:
             LayoutTheme.reset();
-            Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
+            Preferences.setIdTheme(this, idTheme);
+            showMessage(R.string.theme_info_update_to_default);
             break;
         case SAVE:
-            databaseAdapter.insertTheme(theme);
+            if (databaseAdapter.insertTheme(theme) > 0) {
+                showMessage(R.string.theme_info_saved);
+            } else {
+                showMessage(R.string.theme_info_not_saved);
+            }
             break;
         case LOAD:
-            LayoutTheme.update(theme);
-            Preferences.setIdTheme(this, theme.getId());
+            Theme newTheme = databaseAdapter.getTheme(idTheme);
+            LayoutTheme.update(newTheme);
+            Preferences.setIdTheme(this, newTheme.getId());
+            showMessage(R.string.theme_info_loaded);
             break;
         case DELETE:
-            databaseAdapter.deleteTheme(theme.getId());
+            if (databaseAdapter.deleteTheme(idTheme)) {
+                if (idTheme == Preferences.getIdTheme()) {
+                    LayoutTheme.reset();
+                    Preferences.setIdTheme(this, Theme.DEFAULT_THEME_ID);
+                }
+                showMessage(R.string.theme_info_deleted);
+            } else {
+                showMessage(R.string.theme_info_not_deleted);
+            }
             break;
         default:
             break;
         }
+    }
+
+    private void showMessage(int id) {
+        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
     }
 
 }

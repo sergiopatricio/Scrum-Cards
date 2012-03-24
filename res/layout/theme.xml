@@ -9,7 +9,7 @@
       <Button style="@style/theme_button" android:id="@+id/button_color_text" android:text="@string/theme_color_text"/>
     </LinearLayout>
     <LinearLayout style="@style/theme_operation_buttons">
-      <Button style="@style/theme_button" android:id="@+id/button_theme_reset" android:text="@string/theme_reset"/>
+      <Button style="@style/theme_button" android:id="@+id/button_theme_default" android:text="@string/theme_default"/>
       <Button style="@style/theme_button" android:id="@+id/button_theme_save" android:text="@string/theme_save"/>
       <Button style="@style/theme_button" android:id="@+id/button_theme_load" android:text="@string/theme_load"/>
       <Button style="@style/theme_button" android:id="@+id/button_theme_delete" android:text="@string/theme_delete"/>
