@@ -54,20 +54,24 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
-        public static final int cancel=0x7f05001f;
+        public static final int cancel=0x7f050023;
         public static final int info_desc1=0x7f050016;
-        public static final int info_desc2=0x7f050017;
-        public static final int info_desc3=0x7f050018;
+        public static final int info_features=0x7f050017;
+        public static final int info_features1=0x7f050018;
+        public static final int info_features2=0x7f050019;
+        public static final int info_features3=0x7f05001a;
+        public static final int info_features4=0x7f05001b;
+        public static final int info_features5=0x7f05001c;
         public static final int information=0x7f050015;
         public static final int menu_information=0x7f050002;
         public static final int menu_preferences=0x7f050003;
         public static final int menu_theme=0x7f050001;
-        public static final int ok=0x7f05001e;
-        public static final int preference_fullscreen=0x7f05001c;
-        public static final int preference_keep_screen_on=0x7f05001d;
-        public static final int preference_scroll_cards_description=0x7f05001b;
-        public static final int preference_scroll_cards_tittle=0x7f05001a;
-        public static final int preferences=0x7f050019;
+        public static final int ok=0x7f050022;
+        public static final int preference_fullscreen=0x7f050020;
+        public static final int preference_keep_screen_on=0x7f050021;
+        public static final int preference_scroll_cards_description=0x7f05001f;
+        public static final int preference_scroll_cards_tittle=0x7f05001e;
+        public static final int preferences=0x7f05001d;
         public static final int theme=0x7f050004;
         public static final int theme_choose_to_delete=0x7f05000e;
         public static final int theme_choose_to_load=0x7f05000d;
@@ -90,6 +94,10 @@ public final class R {
         public static final int card_option_item=0x7f060002;
         public static final int card_option_line=0x7f060001;
         public static final int full_card=0x7f060003;
+        public static final int info_line=0x7f060009;
+        public static final int info_line1=0x7f06000a;
+        public static final int info_title=0x7f060008;
+        public static final int info_window=0x7f060007;
         public static final int main_window=0x7f060000;
         public static final int theme_button=0x7f060006;
         public static final int theme_color_buttons=0x7f060004;

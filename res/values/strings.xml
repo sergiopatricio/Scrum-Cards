@@ -26,9 +26,13 @@
     <string name="theme_info_not_deleted">Error deleting theme.</string>
 
     <string name="information">About Scrum Cards</string>
-    <string name="info_desc1">This is just a simple set of scrum cards.</string>
-    <string name="info_desc2">Select the card for voting and swipe for returning to card select.</string>
-    <string name="info_desc3">It\'s possible to scroll cards, just activate option in preferences. In this case vertical swype returns to card select and horizontal swype scrolls cards.</string>
+    <string name="info_desc1">This is a simple set of scrum cards.</string>
+    <string name="info_features">Features:</string>
+    <string name="info_features1">- Select the card for voting and swipe for returning to card select</string>
+    <string name="info_features2">- Scroll cards</string>
+    <string name="info_features3">- Fullscreen</string>
+    <string name="info_features4">- Keep screen on</string>
+    <string name="info_features5">- Themes (default, save, load, delete)</string>
 
     <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>

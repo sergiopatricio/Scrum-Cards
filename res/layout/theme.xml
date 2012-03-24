@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/main_window" android:padding="5dp" >
-
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/theme" android:textAppearance="?android:attr/textAppearanceLarge"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/info_window">
+    <TextView style="@style/info_title" android:text="@string/theme"/>
     <LinearLayout style="@style/theme_color_buttons">
       <Button style="@style/theme_button" android:id="@+id/button_color_background" android:text="@string/theme_color_background"/>
       <Button style="@style/theme_button" android:id="@+id/button_color_card" android:text="@string/theme_color_card"/>

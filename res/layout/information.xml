@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/main_window" android:padding="5dp" >
-
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/information" android:textAppearance="?android:attr/textAppearanceLarge"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/info_desc1"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/info_desc2"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/info_desc3"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/info_window" >
+    <TextView style="@style/info_title" android:text="@string/information"/>
+    <TextView style="@style/info_line" android:text="@string/info_desc1"/>
+    <TextView style="@style/info_line" android:text="@string/info_features"/>
+    <TextView style="@style/info_line1" android:text="@string/info_features1"/>
+    <TextView style="@style/info_line1" android:text="@string/info_features2"/>
+    <TextView style="@style/info_line1" android:text="@string/info_features3"/>
+    <TextView style="@style/info_line1" android:text="@string/info_features4"/>
+    <TextView style="@style/info_line1" android:text="@string/info_features5"/>
 </LinearLayout>
