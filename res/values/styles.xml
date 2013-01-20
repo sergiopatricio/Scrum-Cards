@@ -49,20 +49,23 @@
         <item name="android:layout_marginLeft">10dp</item>
     </style>
 
-    <style name="theme_color_buttons" parent="main_window">
+    <style name="theme_options" parent="main_window">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">fill_parent</item>
         <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">20dp</item>
     </style>
-    <style name="theme_operation_buttons" parent="main_window">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">20dp</item>
+    <style name="theme_operation_buttons" parent="theme_options">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginBottom">3dp</item>
     </style>
     <style name="theme_button">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+    <style name="theme_small_button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">120dp</item>
         <item name="android:layout_margin">3dp</item>
     </style>
     <style name="theme_checkbox">
@@ -76,14 +79,9 @@
         <item name="android:baselineAligned">false</item>
     </style>
 
-    <style name="theme_color_buttons_horizontal" parent="theme_color_buttons">
+    <style name="theme_options_horizontal" parent="theme_options">
         <item name="android:orientation">vertical</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">.5</item>
-    </style>
-    <style name="theme_operation_buttons_horizontal" parent="theme_operation_buttons">
-        <item name="android:orientation">vertical</item>
-        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">.5</item>
     </style>

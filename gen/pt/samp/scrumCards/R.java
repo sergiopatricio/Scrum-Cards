@@ -19,10 +19,10 @@ public final class R {
         public static final int button_color_background=0x7f08000f;
         public static final int button_color_card=0x7f080010;
         public static final int button_color_text=0x7f080011;
-        public static final int button_theme_default=0x7f080014;
+        public static final int button_theme_default=0x7f080015;
         public static final int button_theme_delete=0x7f080017;
         public static final int button_theme_load=0x7f080016;
-        public static final int button_theme_save=0x7f080015;
+        public static final int button_theme_save=0x7f080014;
         public static final int card0=0x7f080002;
         public static final int card0_5=0x7f080003;
         public static final int card1=0x7f080004;
@@ -99,17 +99,17 @@ public final class R {
         public static final int card_option_item=0x7f060002;
         public static final int card_option_line=0x7f060001;
         public static final int content_window=0x7f060004;
-        public static final int content_window_horizontal=0x7f06000c;
+        public static final int content_window_horizontal=0x7f06000d;
         public static final int full_card=0x7f060003;
         public static final int line=0x7f060006;
         public static final int line1=0x7f060007;
         public static final int main_window=0x7f060000;
         public static final int theme_button=0x7f06000a;
-        public static final int theme_checkbox=0x7f06000b;
-        public static final int theme_color_buttons=0x7f060008;
-        public static final int theme_color_buttons_horizontal=0x7f06000d;
+        public static final int theme_checkbox=0x7f06000c;
         public static final int theme_operation_buttons=0x7f060009;
-        public static final int theme_operation_buttons_horizontal=0x7f06000e;
+        public static final int theme_options=0x7f060008;
+        public static final int theme_options_horizontal=0x7f06000e;
+        public static final int theme_small_button=0x7f06000b;
         public static final int title=0x7f060005;
     }
     public static final class xml {
