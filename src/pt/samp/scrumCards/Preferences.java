@@ -67,6 +67,12 @@ public class Preferences {
 
     public static void setWindowFlags(Activity activity) {
         if (showInFullscreen) {
+            /*
+             *  this is problematic if the device has no menu button, with the title disabled the menu is not accessible
+             *  possible solutions:
+             *    only use fullscreen on card show
+             *    add some shortcut/feature to exit fullscreen or enter preferences
+             */
             activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
