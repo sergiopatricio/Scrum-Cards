@@ -7,7 +7,7 @@ public class InformationActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Preferences.setWindowFlags(this);
+        Preferences.setWindowFlags(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);
     }

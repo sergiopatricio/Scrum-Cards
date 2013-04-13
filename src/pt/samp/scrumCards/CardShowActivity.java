@@ -19,7 +19,7 @@ public class CardShowActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Preferences.setWindowFlags(this);
+        Preferences.setWindowFlags(this, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);
 

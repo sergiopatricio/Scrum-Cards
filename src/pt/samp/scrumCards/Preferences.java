@@ -65,8 +65,8 @@ public class Preferences {
         Preferences.idTheme = idTheme;
     }
 
-    public static void setWindowFlags(Activity activity) {
-        if (showInFullscreen) {
+    public static void setWindowFlags(Activity activity, boolean forceFullScreen) {
+        if (showInFullscreen || forceFullScreen) {
             /*
              *  this is problematic if the device has no menu button, with the title disabled the menu is not accessible
              *  possible solutions:

@@ -16,7 +16,7 @@ public class CardSelectorActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Preferences.loadPreferences(this);
-        Preferences.setWindowFlags(this);
+        Preferences.setWindowFlags(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
