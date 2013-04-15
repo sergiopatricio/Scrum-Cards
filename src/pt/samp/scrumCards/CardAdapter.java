@@ -29,7 +29,7 @@ public class CardAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return Cards.createCardView(context, parent, Cards.VALUES[position]);
+        return Cards.createCardView(context, parent, position);
     }
 
 }

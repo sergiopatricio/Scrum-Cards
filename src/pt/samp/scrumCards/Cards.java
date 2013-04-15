@@ -1,6 +1,9 @@
 package pt.samp.scrumCards;
 
+import android.app.Activity;
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,10 +15,28 @@ public final class Cards {
     public static final String[] VALUES = new String[] { "0", "1/2", "1", "2", "3", "5", "8", "13", "20", "40", "100",
             "?" };
 
-    public static TextView createCardView(Context context, ViewGroup parent, String cardValue) {
+    // values based on tests with multiple screen resolutions
+    private static final float[] VERTICAL_FACTOR = new float[] { 1.8f, 3.5f, 1.8f, 1.8f, 1.8f, 1.8f, 1.8f, 2.5f, 2.5f,
+            2.5f, 3.5f, 1.8f };
+    private static final float HORIZONTAL_FACTOR = 2.5f;
+
+    public static TextView createCardView(Context context, ViewGroup parent, int position) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         TextView textView = (TextView) inflater.inflate(R.layout.card, parent, false);
-        textView.setText(cardValue);
+        textView.setText(VALUES[position]);
+
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+
+        // set font size based on the screen size
+        int newSize;
+        if (displaymetrics.heightPixels > displaymetrics.widthPixels) {
+            newSize = (int) (displaymetrics.heightPixels / VERTICAL_FACTOR[position]);
+        } else {
+            newSize = (int) (displaymetrics.widthPixels / HORIZONTAL_FACTOR);
+        }
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, newSize);
+
         LayoutTheme.updateFullCard(context, textView);
         return textView;
     }

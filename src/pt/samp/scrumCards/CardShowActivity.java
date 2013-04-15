@@ -42,7 +42,7 @@ public class CardShowActivity extends Activity {
 
             cardView = gallery;
         } else {
-            cardView = Cards.createCardView(this, view, Cards.VALUES[cardPosition]);
+            cardView = Cards.createCardView(this, view, cardPosition);
             gestureDetector = new GestureDetector(new MyGestureDetector());
         }
         view.addView(cardView);
