@@ -16,8 +16,8 @@ public final class Cards {
             "?" };
 
     // values based on tests with multiple screen resolutions
-    private static final float[] VERTICAL_FACTOR = new float[] { 1.8f, 3.5f, 1.8f, 1.8f, 1.8f, 1.8f, 1.8f, 2.5f, 2.5f,
-            2.5f, 3.5f, 1.8f };
+    private static final float[] VERTICAL_FACTOR = new float[] { 2.5f, 4f, 2.5f, 2.5f, 2.5f, 2.5f, 2.5f, 3f, 3f, 3f,
+            4f, 2.5f };
     private static final float HORIZONTAL_FACTOR = 2.5f;
 
     public static TextView createCardView(Context context, ViewGroup parent, int position) {
