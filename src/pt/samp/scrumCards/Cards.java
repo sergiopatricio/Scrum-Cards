@@ -37,7 +37,6 @@ public final class Cards {
         }
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, newSize);
 
-        LayoutTheme.updateFullCard(context, textView);
         return textView;
     }
 }

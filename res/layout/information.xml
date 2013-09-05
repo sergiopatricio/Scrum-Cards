@@ -7,5 +7,4 @@
     <TextView style="@style/line1" android:text="@string/info_features2"/>
     <TextView style="@style/line1" android:text="@string/info_features3"/>
     <TextView style="@style/line1" android:text="@string/info_features4"/>
-    <TextView style="@style/line1" android:text="@string/info_features5"/>
 </LinearLayout>

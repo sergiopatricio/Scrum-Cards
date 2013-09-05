@@ -16,13 +16,6 @@ public final class R {
         public static final int icon=0x7f020002;
     }
     public static final class id {
-        public static final int button_color_background=0x7f08000f;
-        public static final int button_color_card=0x7f080010;
-        public static final int button_color_text=0x7f080011;
-        public static final int button_theme_default=0x7f080015;
-        public static final int button_theme_delete=0x7f080017;
-        public static final int button_theme_load=0x7f080016;
-        public static final int button_theme_save=0x7f080014;
         public static final int card0=0x7f080002;
         public static final int card0_5=0x7f080003;
         public static final int card1=0x7f080004;
@@ -35,13 +28,10 @@ public final class R {
         public static final int card5=0x7f080007;
         public static final int card8=0x7f080008;
         public static final int cardq=0x7f08000d;
-        public static final int check_full_card_with_border=0x7f080012;
-        public static final int current_theme_name=0x7f080013;
         public static final int full_card=0x7f080000;
         public static final int main_layout=0x7f080001;
-        public static final int menu_information=0x7f080019;
-        public static final int menu_preferences=0x7f08001a;
-        public static final int menu_theme=0x7f080018;
+        public static final int menu_information=0x7f08000f;
+        public static final int menu_preferences=0x7f080010;
         public static final int show_container=0x7f08000e;
     }
     public static final class layout {
@@ -49,7 +39,6 @@ public final class R {
         public static final int information=0x7f030001;
         public static final int main=0x7f030002;
         public static final int show=0x7f030003;
-        public static final int theme=0x7f030004;
     }
     public static final class menu {
         public static final int app_menu=0x7f070000;

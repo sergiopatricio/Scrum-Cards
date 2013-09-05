@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 public class CardSelectorActivity extends Activity {
     private static int REQUEST_CODE_PREFERENCES = 1;
-    private static int REQUEST_CODE_THEME = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +18,6 @@ public class CardSelectorActivity extends Activity {
         Preferences.setWindowFlags(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        loadLayoutTheme();
-        LayoutTheme.updateCardSelector(this, false);
 
         TextView textView;
         for (int id : Cards.IDS) {
@@ -40,8 +36,6 @@ public class CardSelectorActivity extends Activity {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
-        } else if (requestCode == REQUEST_CODE_THEME) {
-            LayoutTheme.updateCardSelector(this, true);
         }
     }
 
@@ -56,9 +50,6 @@ public class CardSelectorActivity extends Activity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.menu_theme:
-            startActivityForResult(new Intent(this, ThemeActivity.class), REQUEST_CODE_THEME);
-            return true;
         case R.id.menu_information:
             startActivity(new Intent(this, InformationActivity.class));
             return true;
@@ -74,21 +65,6 @@ public class CardSelectorActivity extends Activity {
         Intent intent = new Intent(this, CardShowActivity.class);
         intent.putExtra(CardShowActivity.CARD_TO_SHOW, pos);
         startActivity(intent);
-    }
-
-    private void loadLayoutTheme() {
-        long idTheme = Preferences.getIdTheme();
-        if (idTheme != Theme.DEFAULT_THEME_ID) {
-            DatabaseAdapter databaseAdapter = new DatabaseAdapter();
-            databaseAdapter.open(this);
-            Theme theme = databaseAdapter.getTheme(idTheme);
-            databaseAdapter.close();
-            if (theme != null) {
-                LayoutTheme.update(theme);
-                return;
-            }
-        }
-        LayoutTheme.reset();
     }
 
 }
