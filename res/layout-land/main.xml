@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_layout" style="@style/main_window">
-
-    <LinearLayout style="@style/card_option_line">
-            <TextView style="@style/card_option_item" android:tag="0" android:text="0" android:id="@+id/card0"/>
-            <TextView style="@style/card_option_item" android:tag="1" android:text="1/2" android:id="@+id/card0_5"/>
-            <TextView style="@style/card_option_item" android:tag="2" android:text="1" android:id="@+id/card1"/>
-            <TextView style="@style/card_option_item" android:tag="3" android:text="2" android:id="@+id/card2"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" style="@style/main_window">
+     <LinearLayout style="@style/card_option_line">
+         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_0" android:id="@+id/card0" />
+         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1_2" android:id="@+id/card1_2" />
+         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1" android:id="@+id/card1" />
+         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_2" android:id="@+id/card2" />
     </LinearLayout>
     <LinearLayout style="@style/card_option_line">
-            <TextView style="@style/card_option_item" android:tag="4" android:text="3" android:id="@+id/card3"/>
-            <TextView style="@style/card_option_item" android:tag="5" android:text="5" android:id="@+id/card5"/>
-            <TextView style="@style/card_option_item" android:tag="6" android:text="8" android:id="@+id/card8"/>
-            <TextView style="@style/card_option_item" android:tag="7" android:text="13" android:id="@+id/card13"/>
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_3" android:id="@+id/card3" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_5" android:id="@+id/card5" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_8" android:id="@+id/card8" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_13" android:id="@+id/card13" />
     </LinearLayout>
     <LinearLayout style="@style/card_option_line">
-            <TextView style="@style/card_option_item" android:tag="8" android:text="20" android:id="@+id/card20"/>
-            <TextView style="@style/card_option_item" android:tag="9" android:text="40" android:id="@+id/card40"/>
-            <TextView style="@style/card_option_item" android:tag="10" android:text="100" android:id="@+id/card100"/>
-            <TextView style="@style/card_option_item" android:tag="11" android:text="\?" android:id="@+id/cardq"/>
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_20" android:id="@+id/card20" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_40" android:id="@+id/card40" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_100" android:id="@+id/card100" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_question" android:id="@+id/cardq" />
     </LinearLayout>
 </LinearLayout>

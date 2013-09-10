@@ -14,12 +14,12 @@ public class CardAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return Cards.VALUES.length;
+        return Card.IMAGES.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return Cards.VALUES[position];
+        return Card.IMAGES[position];
     }
 
     @Override
@@ -29,7 +29,6 @@ public class CardAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return Cards.createCardView(context, parent, position);
+        return Card.createCardView(context, parent, position);
     }
-
 }

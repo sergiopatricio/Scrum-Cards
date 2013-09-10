@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/content_window" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" style="@style/content_window" >
     <TextView style="@style/title" android:text="@string/information"/>
     <TextView style="@style/line" android:text="@string/info_desc1"/>
     <TextView style="@style/line" android:text="@string/info_features"/>

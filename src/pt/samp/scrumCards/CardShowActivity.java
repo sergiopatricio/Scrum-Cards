@@ -24,7 +24,6 @@ public class CardShowActivity extends Activity {
         setContentView(R.layout.show);
 
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);
-
         LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
         View cardView = null;
         if (Preferences.scrollCards()) {
@@ -41,7 +40,7 @@ public class CardShowActivity extends Activity {
 
             cardView = gallery;
         } else {
-            cardView = Cards.createCardView(this, view, cardPosition);
+            cardView = Card.createCardView(this, view, cardPosition);
             gestureDetector = new GestureDetector(new MyGestureDetector());
         }
         view.addView(cardView);

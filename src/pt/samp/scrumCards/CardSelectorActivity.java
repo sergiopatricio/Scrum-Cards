@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 public class CardSelectorActivity extends Activity {
     private static int REQUEST_CODE_PREFERENCES = 1;
@@ -19,12 +19,13 @@ public class CardSelectorActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        TextView textView;
-        for (int id : Cards.IDS) {
-            textView = (TextView) findViewById(id);
-            textView.setOnClickListener(new View.OnClickListener() {
+        for (int i = 0; i < Card.IDS.length; i++) {
+            final int idCard = Card.IDS[i];
+            final int position = i;
+
+            ((ImageView) findViewById(idCard)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    showCard(Integer.parseInt((String) view.getTag()));
+                    showCard(position);
                 }
             });
         }
@@ -66,5 +67,4 @@ public class CardSelectorActivity extends Activity {
         intent.putExtra(CardShowActivity.CARD_TO_SHOW, pos);
         startActivity(intent);
     }
-
 }
