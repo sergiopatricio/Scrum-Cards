@@ -51,8 +51,8 @@ public class CardSelectorActivity extends Activity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.menu_information:
-            startActivity(new Intent(this, InformationActivity.class));
+        case R.id.menu_about:
+            startActivity(new Intent(this, AboutActivity.class));
             return true;
         case R.id.menu_preferences:
             startActivityForResult(new Intent(this, PreferencesActivity.class), REQUEST_CODE_PREFERENCES);

@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CardShowActivity" />
-        <activity android:name=".InformationActivity" />
+        <activity android:name=".AboutActivity" />
         <activity android:name=".PreferencesActivity" />
     </application>
 </manifest>

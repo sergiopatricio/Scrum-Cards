@@ -2,16 +2,16 @@
 <resources>
     <string name="app_name">Scrum Cards</string>
 
-    <string name="menu_information">Information</string>
+    <string name="menu_about">About</string>
     <string name="menu_preferences">Preferences</string>
 
-    <string name="information">About Scrum Cards</string>
-    <string name="info_desc1">This is a simple set of scrum cards.</string>
-    <string name="info_features">Features:</string>
-    <string name="info_features1">- Select the card for voting and swipe for returning to card select</string>
-    <string name="info_features2">- Scroll cards</string>
-    <string name="info_features3">- Fullscreen</string>
-    <string name="info_features4">- Keep screen on</string>
+    <string name="about">About Scrum Cards</string>
+    <string name="about_desc1">This is a simple set of scrum cards.</string>
+    <string name="about_features">Features:</string>
+    <string name="about_features1">- Select the card for voting and swipe for returning to card select</string>
+    <string name="about_features2">- Scroll cards</string>
+    <string name="about_features3">- Fullscreen</string>
+    <string name="about_features4">- Keep screen on</string>
 
     <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>
@@ -21,5 +21,4 @@
 
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-
 </resources>
