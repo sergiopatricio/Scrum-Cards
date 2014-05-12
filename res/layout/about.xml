@@ -4,7 +4,7 @@
     <TextView style="@style/line" android:text="@string/about_desc1"/>
     <TextView style="@style/line" android:text="@string/about_features"/>
     <TextView style="@style/line1" android:text="@string/about_features_voting"/>
+    <TextView style="@style/line1" android:text="@string/about_features_full_screen"/>
     <TextView style="@style/line1" android:text="@string/about_features_scroll"/>
-    <TextView style="@style/line1" android:text="@string/about_features_fullscreen"/>
     <TextView style="@style/line1" android:text="@string/about_features_screen_on"/>
 </LinearLayout>

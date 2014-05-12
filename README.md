@@ -5,8 +5,8 @@ This is a simple set of scrum cards.
 Features:
 
 * Select the card for voting and swipe for returning to card select
+* Card shown in full screen
 * Scroll cards
-* Fullscreen
 * Keep screen on
 
 <a href="https://play.google.com/store/apps/details?id=pt.samp.scrumCards">
