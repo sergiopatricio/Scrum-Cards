@@ -8,10 +8,10 @@
     <string name="about">About Scrum Cards</string>
     <string name="about_desc1">This is a simple set of scrum cards.</string>
     <string name="about_features">Features:</string>
-    <string name="about_features1">- Select the card for voting and swipe for returning to card select</string>
-    <string name="about_features2">- Scroll cards</string>
-    <string name="about_features3">- Fullscreen</string>
-    <string name="about_features4">- Keep screen on</string>
+    <string name="about_features_voting">- Select the card for voting and swipe for returning to card select</string>
+    <string name="about_features_scroll">- Scroll cards</string>
+    <string name="about_features_fullscreen">- Fullscreen</string>
+    <string name="about_features_screen_on">- Keep screen on</string>
 
     <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>

@@ -70,10 +70,10 @@ public final class R {
         public static final int about=0x7f050003;
         public static final int about_desc1=0x7f050004;
         public static final int about_features=0x7f050005;
-        public static final int about_features1=0x7f050006;
-        public static final int about_features2=0x7f050007;
-        public static final int about_features3=0x7f050008;
-        public static final int about_features4=0x7f050009;
+        public static final int about_features_fullscreen=0x7f050008;
+        public static final int about_features_screen_on=0x7f050009;
+        public static final int about_features_scroll=0x7f050007;
+        public static final int about_features_voting=0x7f050006;
         public static final int app_name=0x7f050000;
         public static final int cancel=0x7f050010;
         public static final int menu_about=0x7f050001;
