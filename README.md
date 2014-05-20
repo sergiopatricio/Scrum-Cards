@@ -18,4 +18,4 @@ Features:
 ### Screenshots
 <img width="300" src="https://raw.github.com/sergiopatricio/Scrum-Cards/master/publish/graphics/screenshot1.png"/>
 &nbsp;
-<img width="300" src="https://raw.github.com/sergiopatricio/Scrum-Cards/master/publish/graphics/screenshot3.png"/>
+<img width="300" src="https://raw.github.com/sergiopatricio/Scrum-Cards/master/publish/graphics/screenshot2.png"/>
