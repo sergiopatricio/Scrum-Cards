@@ -12,11 +12,14 @@
     <string name="about_features_full_screen">- Card shown in full screen</string>
     <string name="about_features_scroll">- Scroll cards</string>
     <string name="about_features_screen_on">- Keep screen on</string>
+    <string name="about_features_tap_to_hide_show">- Tap to hide/show selected card</string>
 
     <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>
     <string name="preference_scroll_cards_description">Scroll cards with horizontal swype</string>
     <string name="preference_keep_screen_on">Keep screen on</string>
+    <string name="preference_tap_to_hide_show_title">Tap to hide/show selected card</string>
+    <string name="preference_tap_to_hide_show_description">When showing a card, tap the screen to hide or show the card</string>
 
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>

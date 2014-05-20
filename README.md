@@ -8,6 +8,7 @@ Features:
 * Card shown in full screen
 * Scroll cards
 * Keep screen on
+* Tap to hide/show selected card
 
 <a href="https://play.google.com/store/apps/details?id=pt.samp.scrumCards">
   <img alt="Android app on Google Play"

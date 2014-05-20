@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 
 public class CardShowActivity extends Activity {
     public static final String CARD_TO_SHOW = "pt.samp.scrumCards.CardPosToShow";
+    private static final int FLING_MINIMUM_INTERVAL = 50;
 
     private GestureDetector gestureDetector;
 
@@ -41,7 +42,7 @@ public class CardShowActivity extends Activity {
             cardView = gallery;
         } else {
             cardView = Card.createCardView(this, view, cardPosition);
-            gestureDetector = new GestureDetector(new MyGestureDetector());
+            gestureDetector = new GestureDetector(new MyGestureDetector(this));
         }
         view.addView(cardView);
     }
@@ -55,9 +56,32 @@ public class CardShowActivity extends Activity {
     }
 
     private class MyGestureDetector extends SimpleOnGestureListener {
+        private final Activity activity;
+
+        public MyGestureDetector(Activity activity) {
+            this.activity = activity;
+        }
+
+        private View getContainerView() {
+            return activity.findViewById(R.id.show_container);
+        }
+
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            CardShowActivity.this.finish();
+            float difX = Math.abs(e2.getRawX() - e1.getRawX());
+            float difY = Math.abs(e2.getRawY() - e1.getRawY());
+
+            if (difX > FLING_MINIMUM_INTERVAL || difY > FLING_MINIMUM_INTERVAL) {
+                activity.finish();
+            } else {
+                toggleCardVisibility(getContainerView());
+            }
+            return true;
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            toggleCardVisibility(getContainerView());
             return true;
         }
     }
@@ -76,9 +100,24 @@ public class CardShowActivity extends Activity {
                 CardShowActivity.this.finish();
                 return true;
             } else {
+                View view = getSelectedView();
+                if (view.getVisibility() == View.INVISIBLE) {
+                    view.setVisibility(View.VISIBLE);
+                }
                 return super.onFling(e1, e2, velocityX, velocityY);
             }
         }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            toggleCardVisibility(getSelectedView());
+            return true;
+        }
     }
 
+    private void toggleCardVisibility(View view) {
+        if (Preferences.tapToHideShow()) {
+            view.setVisibility(view.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        }
+    }
 }

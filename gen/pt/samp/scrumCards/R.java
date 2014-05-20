@@ -53,8 +53,8 @@ public final class R {
         public static final int card8=0x7f080007;
         public static final int cardq=0x7f08000c;
         public static final int full_card=0x7f080000;
-        public static final int menu_about=0x7f08000e;
-        public static final int menu_preferences=0x7f08000f;
+        public static final int menu_about=0x7f08000f;
+        public static final int menu_preferences=0x7f08000e;
         public static final int show_container=0x7f08000d;
     }
     public static final class layout {
@@ -73,16 +73,19 @@ public final class R {
         public static final int about_features_full_screen=0x7f050007;
         public static final int about_features_screen_on=0x7f050009;
         public static final int about_features_scroll=0x7f050008;
+        public static final int about_features_tap_to_hide_show=0x7f05000a;
         public static final int about_features_voting=0x7f050006;
         public static final int app_name=0x7f050000;
-        public static final int cancel=0x7f05000f;
+        public static final int cancel=0x7f050012;
         public static final int menu_about=0x7f050001;
         public static final int menu_preferences=0x7f050002;
-        public static final int ok=0x7f05000e;
-        public static final int preference_keep_screen_on=0x7f05000d;
-        public static final int preference_scroll_cards_description=0x7f05000c;
-        public static final int preference_scroll_cards_tittle=0x7f05000b;
-        public static final int preferences=0x7f05000a;
+        public static final int ok=0x7f050011;
+        public static final int preference_keep_screen_on=0x7f05000e;
+        public static final int preference_scroll_cards_description=0x7f05000d;
+        public static final int preference_scroll_cards_tittle=0x7f05000c;
+        public static final int preference_tap_to_hide_show_description=0x7f050010;
+        public static final int preference_tap_to_hide_show_title=0x7f05000f;
+        public static final int preferences=0x7f05000b;
     }
     public static final class style {
         public static final int card_option_item=0x7f060002;
