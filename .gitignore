@@ -1,4 +1,9 @@
+# Generated files
 bin/*
+gen/
+
 .project
 .classpath
 .settings/*
+.idea
+
