@@ -7,8 +7,8 @@ android {
         applicationId 'pt.samp.scrumCards'
         minSdkVersion 4
         targetSdkVersion 14
-        versionCode 1
-        versionName '1.0'
+        versionCode 12
+        versionName '2.1'
     }
     buildTypes {
         release {
