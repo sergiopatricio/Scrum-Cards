@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class CardAdapter extends BaseAdapter {
-    Context context = null;
+    private Context context = null;
 
     public CardAdapter(Context context) {
         this.context = context;

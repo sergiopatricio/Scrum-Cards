@@ -30,10 +30,7 @@ public class Preferences {
         keepScreenOn = sharedPreferences.getBoolean(PREFERENCE_KEEP_SCREEN_ON, false);
         tapToHideShow = sharedPreferences.getBoolean(PREFERENCE_TAP_TO_HIDE_SHOW, false);
 
-        if (oldScrollCards != scrollCards || oldKeepScreenOn != keepScreenOn || oldTapToHideShow != tapToHideShow) {
-            return true;
-        }
-        return false;
+        return oldScrollCards != scrollCards || oldKeepScreenOn != keepScreenOn || oldTapToHideShow != tapToHideShow;
     }
 
     public static boolean scrollCards() {

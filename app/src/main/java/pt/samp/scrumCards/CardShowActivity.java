@@ -26,7 +26,7 @@ public class CardShowActivity extends Activity {
 
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);
         LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
-        View cardView = null;
+        View cardView;
         if (Preferences.scrollCards()) {
             MyGallery gallery = new MyGallery(this);
             gallery.setAdapter(new CardAdapter(this));
@@ -49,10 +49,7 @@ public class CardShowActivity extends Activity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (gestureDetector != null) {
-            return gestureDetector.onTouchEvent(event);
-        }
-        return false;
+        return gestureDetector != null && gestureDetector.onTouchEvent(event);
     }
 
     private class MyGestureDetector extends SimpleOnGestureListener {

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class CardSelectorActivity extends Activity {
-    private static int REQUEST_CODE_PREFERENCES = 1;
+    private static final int REQUEST_CODE_PREFERENCES = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class CardSelectorActivity extends Activity {
             final int idCard = Card.IDS[i];
             final int position = i;
 
-            ((ImageView) findViewById(idCard)).setOnClickListener(new View.OnClickListener() {
+            findViewById(idCard).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     showCard(position);
                 }
