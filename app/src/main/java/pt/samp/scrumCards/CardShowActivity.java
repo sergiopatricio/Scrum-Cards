@@ -33,7 +33,7 @@ public class CardShowActivity extends Activity {
             gallery.setSelection(cardPosition);
 
             gallery.setBackgroundColor(Color.TRANSPARENT);
-            gallery.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+            gallery.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
             gallery.setSpacing(0);
             gallery.setFadingEdgeLength(0);
             gallery.setUnselectedAlpha(1);
