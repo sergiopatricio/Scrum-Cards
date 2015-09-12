@@ -5,7 +5,6 @@
     <TextView style="@style/line" android:text="@string/about_features"/>
     <TextView style="@style/line1" android:text="@string/about_features_voting"/>
     <TextView style="@style/line1" android:text="@string/about_features_full_screen"/>
-    <TextView style="@style/line1" android:text="@string/about_features_scroll"/>
     <TextView style="@style/line1" android:text="@string/about_features_screen_on"/>
     <TextView style="@style/line1" android:text="@string/about_features_tap_to_hide_show"/>
 </LinearLayout>

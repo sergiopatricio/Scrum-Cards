@@ -6,7 +6,6 @@ Features:
 
 * Select the card for voting and swipe for returning to card select
 * Card shown in full screen
-* Scroll cards
 * Keep screen on
 * Tap to hide/show selected card
 
