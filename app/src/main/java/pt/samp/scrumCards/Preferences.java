@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class Preferences {
+class Preferences {
     private static final String PREFERENCE_KEEP_SCREEN_ON = "keep_screen_on";
     private static final String PREFERENCE_TAP_TO_HIDE_SHOW = "tap_to_hide_show";
 
@@ -27,10 +27,6 @@ public class Preferences {
         tapToHideShow = sharedPreferences.getBoolean(PREFERENCE_TAP_TO_HIDE_SHOW, false);
 
         return oldKeepScreenOn != keepScreenOn || oldTapToHideShow != tapToHideShow;
-    }
-
-    public static boolean keepScreenOn() {
-        return keepScreenOn;
     }
 
     public static boolean tapToHideShow() {

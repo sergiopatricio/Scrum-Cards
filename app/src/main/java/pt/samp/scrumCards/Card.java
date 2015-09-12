@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public final class Card {
+final class Card {
     public static final int[] IDS = new int[] {
         R.id.card0,
         R.id.card1_2,
@@ -21,7 +21,7 @@ public final class Card {
         R.id.cardq
     };
 
-    public static final int[] IMAGES = new int[] {
+    private static final int[] IMAGES = new int[] {
         R.drawable.card_big_0,
         R.drawable.card_big_1_2,
         R.drawable.card_big_1,
