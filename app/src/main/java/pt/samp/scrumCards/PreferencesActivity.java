@@ -1,15 +1,22 @@
 package pt.samp.scrumCards;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 
-public class PreferencesActivity extends PreferenceActivity {
+public class PreferencesActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Preferences.setWindowFlags(this, false);
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.preferences);
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
     }
 
+    public static class SettingsFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.preferences);
+        }
+    }
 }
