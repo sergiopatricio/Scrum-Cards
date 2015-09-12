@@ -14,7 +14,6 @@
     <string name="about_features_screen_on">- Keep screen on</string>
     <string name="about_features_tap_to_hide_show">- Tap to hide/show selected card</string>
 
-    <string name="preferences">Scrum Cards Preferences</string>
     <string name="preference_scroll_cards_tittle">Scrolls cards</string>
     <string name="preference_scroll_cards_description">Scroll cards with horizontal slide</string>
     <string name="preference_keep_screen_on">Keep screen on</string>
