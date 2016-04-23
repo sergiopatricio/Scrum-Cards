@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" style="@style/main_window">
-     <LinearLayout style="@style/card_option_line">
-         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_0" android:id="@+id/card0" />
-         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1_2" android:id="@+id/card1_2" />
-         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1" android:id="@+id/card1" />
+    <LinearLayout style="@style/card_option_line">
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_0" android:id="@+id/card0" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1_2" android:id="@+id/card1_2" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1" android:id="@+id/card1" />
     </LinearLayout>
     <LinearLayout style="@style/card_option_line">
         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_2" android:id="@+id/card2" />
@@ -18,6 +18,10 @@
     <LinearLayout style="@style/card_option_line">
         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_40" android:id="@+id/card40" />
         <ImageView style="@style/card_option_item" android:src="@drawable/card_small_100" android:id="@+id/card100" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_question" android:id="@+id/cardq" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_question" android:id="@+id/cardquestion" />
+    </LinearLayout>
+    <LinearLayout style="@style/card_option_line">
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_infinite" android:id="@+id/cardinfinite" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_coffee" android:id="@+id/cardcoffee" />
     </LinearLayout>
 </LinearLayout>

@@ -18,7 +18,9 @@ final class Card {
         R.id.card20,
         R.id.card40,
         R.id.card100,
-        R.id.cardq
+        R.id.cardquestion,
+        R.id.cardinfinite,
+        R.id.cardcoffee
     };
 
     private static final int[] IMAGES = new int[] {
@@ -33,7 +35,9 @@ final class Card {
         R.drawable.card_big_20,
         R.drawable.card_big_40,
         R.drawable.card_big_100,
-        R.drawable.card_big_question
+        R.drawable.card_big_question,
+        R.drawable.card_big_infinite,
+        R.drawable.card_big_coffee
     };
 
     public static ImageView createCardView(Context context, ViewGroup parent, int position) {
