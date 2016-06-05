@@ -16,4 +16,6 @@
     <string name="preference_keep_screen_on">Keep screen on</string>
     <string name="preference_tap_to_hide_show_title">Tap to hide/show selected card</string>
     <string name="preference_tap_to_hide_show_description">When showing a card, tap the screen to hide or show the card</string>
+    <string name="preference_keep_hidden_title">Keep card hidden on rotation</string>
+    <string name="preference_keep_hidden_description">When rotating phone keep the card hidden, if not selected card will be shown on rotation event.</string>
 </resources>

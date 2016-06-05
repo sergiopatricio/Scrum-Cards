@@ -61,6 +61,8 @@ public class CardSelectorActivity extends Activity {
     }
 
     private void showCard(int pos) {
+        Globals g = (Globals)getApplication();
+        g.isCardVisible = true;
         Intent intent = new Intent(this, CardShowActivity.class);
         intent.putExtra(CardShowActivity.CARD_TO_SHOW, pos);
         startActivity(intent);

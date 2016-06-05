@@ -11,11 +11,13 @@ import android.widget.LinearLayout;
 public class CardShowActivity extends Activity {
     public static final String CARD_TO_SHOW = "pt.samp.scrumCards.CardPosToShow";
     private static final int FLING_MINIMUM_INTERVAL = 50;
+    private static Globals g;
 
     private GestureDetector gestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        g = (Globals)getApplication();
         Preferences.setWindowFlags(this, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);
@@ -25,6 +27,9 @@ public class CardShowActivity extends Activity {
         View cardView = Card.createCardView(this, view, cardPosition);
         gestureDetector = new GestureDetector(this, new MyGestureDetector(this));
         view.addView(cardView);
+        if (Preferences.keepHidden() && !g.isCardVisible) {
+            view.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -66,6 +71,7 @@ public class CardShowActivity extends Activity {
     private void toggleCardVisibility(View view) {
         if (Preferences.tapToHideShow()) {
             view.setVisibility(view.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+            g.isCardVisible = view.getVisibility() == View.VISIBLE;
         }
     }
 }

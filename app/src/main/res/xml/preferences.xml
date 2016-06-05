@@ -7,4 +7,8 @@
                         android:summary="@string/preference_tap_to_hide_show_description"
                         android:defaultValue="false"
                         android:key="tap_to_hide_show"/>
+    <CheckBoxPreference android:title="@string/preference_keep_hidden_title"
+                        android:summary="@string/preference_keep_hidden_description"
+                        android:defaultValue="false"
+                        android:key="keep_hidden"/>
 </PreferenceScreen>
