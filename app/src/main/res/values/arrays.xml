@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_colors">
+        <item>BLACK</item>
+        <item>DKGRAY</item>
+        <item>GRAY</item>
+        <item>LTGRAY</item>
+        <item>RED</item>
+        <item>GREEN</item>
+        <item>BLUE</item>
+        <item>YELLOW</item>
+        <item>CYAN</item>
+        <item>MAGENTA</item>
+    </string-array>
+    <string-array name="list_colors_values">
+        <item>#000000</item>
+        <item>#444444</item>
+        <item>#888888</item>
+        <item>#CCCCCC</item>
+        <item>#FF0000</item>
+        <item>#00FF00</item>
+        <item>#0000FF</item>
+        <item>#FFFF00</item>
+        <item>#00FFFF</item>
+        <item>#FF00FF</item>
+    </string-array>
+</resources>

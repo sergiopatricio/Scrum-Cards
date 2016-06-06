@@ -24,7 +24,7 @@ public class CardShowActivity extends Activity {
 
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);
         LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
-        View cardView = Card.createCardView(this, view, cardPosition);
+        View cardView = Card.createCardView(this, view, cardPosition, Preferences.cardColor());
         gestureDetector = new GestureDetector(this, new MyGestureDetector(this));
         view.addView(cardView);
         if (Preferences.keepHidden() && !g.isCardVisible) {

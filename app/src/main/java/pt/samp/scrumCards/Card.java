@@ -1,6 +1,7 @@
 package pt.samp.scrumCards;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -40,10 +41,11 @@ final class Card {
         R.drawable.card_big_coffee
     };
 
-    public static ImageView createCardView(Context context, ViewGroup parent, int position) {
+    public static ImageView createCardView(Context context, ViewGroup parent, int position, int color) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ImageView imageView = (ImageView) inflater.inflate(R.layout.card, parent, false);
         imageView.setImageResource(Card.IMAGES[position]);
+        imageView.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
 
 //        Resources resources = context.getResources();
 //        imageView.setImageBitmap(BitmapFactory.decodeResource(resources, Card.IMAGES[position]));

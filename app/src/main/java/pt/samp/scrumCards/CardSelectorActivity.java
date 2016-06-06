@@ -2,11 +2,13 @@ package pt.samp.scrumCards;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 public class CardSelectorActivity extends Activity {
     private static final int REQUEST_CODE_PREFERENCES = 1;
@@ -19,10 +21,10 @@ public class CardSelectorActivity extends Activity {
         setContentView(R.layout.main);
 
         for (int i = 0; i < Card.IDS.length; i++) {
-            final int idCard = Card.IDS[i];
             final int position = i;
-
-            findViewById(idCard).setOnClickListener(new View.OnClickListener() {
+            ImageView view = (ImageView)findViewById(Card.IDS[i]);
+            view.setColorFilter(Preferences.cardColor(), PorterDuff.Mode.SRC_ATOP);
+            view.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     showCard(position);
                 }
