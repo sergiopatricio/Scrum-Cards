@@ -7,4 +7,5 @@
     <TextView style="@style/line1" android:text="@string/about_features_full_screen"/>
     <TextView style="@style/line1" android:text="@string/about_features_screen_on"/>
     <TextView style="@style/line1" android:text="@string/about_features_tap_to_hide_show"/>
+    <TextView style="@style/line1" android:text="@string/about_features_user_shirt_sizes"/>
 </LinearLayout>

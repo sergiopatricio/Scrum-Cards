@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" style="@style/main_window">
+    <LinearLayout style="@style/card_option_line">
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_0" android:textColor="@color/black" android:id="@+id/card0" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_xxs" android:textColor="@color/black" android:id="@+id/card1_2" />
+        <TextView style="@style/card_option_item" android:gravity="center"  android:textSize="50sp" android:text="@string/shirt_size_xs" android:textColor="@color/black" android:id="@+id/card1" />
+    </LinearLayout>
+    <LinearLayout style="@style/card_option_line">
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_s" android:textColor="@color/black" android:id="@+id/card2" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_m" android:textColor="@color/black" android:id="@+id/card3" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_l" android:textColor="@color/black" android:id="@+id/card5" />
+    </LinearLayout>
+    <LinearLayout style="@style/card_option_line">
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_xl" android:textColor="@color/black" android:id="@+id/card8" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_2xl" android:textColor="@color/black" android:id="@+id/card13" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_3xl" android:textColor="@color/black" android:id="@+id/card20" />
+    </LinearLayout>
+    <LinearLayout style="@style/card_option_line">
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_4xl" android:textColor="@color/black" android:id="@+id/card40" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_5xl" android:textColor="@color/black" android:id="@+id/card100" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_question" android:id="@+id/cardquestion" />
+    </LinearLayout>
+    <LinearLayout style="@style/card_option_line">
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_infinite" android:id="@+id/cardinfinite" />
+        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_coffee" android:id="@+id/cardcoffee" />
+    </LinearLayout>
+</LinearLayout>

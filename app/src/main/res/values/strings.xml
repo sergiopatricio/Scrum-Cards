@@ -12,8 +12,23 @@
     <string name="about_features_full_screen">- Card shown in full screen</string>
     <string name="about_features_screen_on">- Keep screen on</string>
     <string name="about_features_tap_to_hide_show">- Tap to hide/show selected card</string>
+    <string name="about_features_user_shirt_sizes">- Use shirt sizes or numbers</string>
 
     <string name="preference_keep_screen_on">Keep screen on</string>
     <string name="preference_tap_to_hide_show_title">Tap to hide/show selected card</string>
     <string name="preference_tap_to_hide_show_description">When showing a card, tap the screen to hide or show the card</string>
+    <string name="preference_use_shirt_sizes_title">Use shirt sizes</string>
+    <string name="preference_use_shirt_sizes_description">Show shirt sizes on cards instead of numbers</string>
+
+    <string name="shirt_size_0">0</string>
+    <string name="shirt_size_xxs">XXS</string>
+    <string name="shirt_size_xs">XS</string>
+    <string name="shirt_size_s">S</string>
+    <string name="shirt_size_m">M</string>
+    <string name="shirt_size_l">L</string>
+    <string name="shirt_size_xl">XL</string>
+    <string name="shirt_size_2xl">2XL</string>
+    <string name="shirt_size_3xl">3XL</string>
+    <string name="shirt_size_4xl">4XL</string>
+    <string name="shirt_size_5xl">5XL</string>
 </resources>

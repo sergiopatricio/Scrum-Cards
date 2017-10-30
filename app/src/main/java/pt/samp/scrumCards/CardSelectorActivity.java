@@ -16,7 +16,12 @@ public class CardSelectorActivity extends Activity {
         Preferences.loadPreferences(this);
         Preferences.setWindowFlags(this, false);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+
+        if (Preferences.useShirtSizes()) {
+            setContentView(R.layout.main_shirts);
+        } else {
+            setContentView(R.layout.main);
+        }
 
         for (int i = 0; i < Card.IDS.length; i++) {
             final int idCard = Card.IDS[i];
