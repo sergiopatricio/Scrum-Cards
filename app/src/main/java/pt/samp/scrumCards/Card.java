@@ -72,16 +72,33 @@ final class Card {
         int height = size.y;
 
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setTextSize(textSize);
+        paint.setTextSize(width);
         paint.setColor(textColor);
         paint.getTextBounds(text, 0, text.length(), textBounds);
 
-//        float desiredTextSize = textSize * width / textBounds.width();
-//        paint.setTextSize(desiredTextSize);
+        System.out.println(paint.getTextSize());
+
+
+        switch (text.length()) {
+            case 1:
+                paint.setTextSize(width*(float)0.9);
+                break;
+            case 2:
+                paint.setTextSize(width*(float)0.8);
+                break;
+            case 3:
+                paint.setTextSize(width*(float)0.5);
+                break;
+            default:
+                paint.setTextSize(width);
+                break;
+        }
 
         paint.getTextBounds(text, 0, text.length(), textBounds);
         Bitmap image = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
+
+        // Center the text
         Canvas canvas = new Canvas(image);
         canvas.drawText(text, (width/2) - textBounds.exactCenterX(), (height/2) - textBounds.exactCenterY(), paint);
 
