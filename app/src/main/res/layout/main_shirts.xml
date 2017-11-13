@@ -12,7 +12,7 @@
     </LinearLayout>
     <LinearLayout style="@style/card_option_line">
         <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_xl" android:textColor="@color/black" android:id="@+id/card8" />
-        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_2xl" android:textColor="@color/black" android:id="@+id/card13" />
+        <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_xxl" android:textColor="@color/black" android:id="@+id/card13" />
         <TextView style="@style/card_option_item" android:gravity="center" android:textSize="50sp" android:text="@string/shirt_size_3xl" android:textColor="@color/black" android:id="@+id/card20" />
     </LinearLayout>
     <LinearLayout style="@style/card_option_line">
