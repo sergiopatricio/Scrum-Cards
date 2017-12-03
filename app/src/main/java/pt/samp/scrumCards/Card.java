@@ -64,7 +64,7 @@ final class Card {
 
     private static Rect textBounds = new Rect();
 
-    private static Bitmap textAsBitmap(Context context, String text, float textSize, int textColor) {
+    private static Bitmap textAsBitmap(Context context, String text, int textColor) {
         Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -75,8 +75,6 @@ final class Card {
         paint.setTextSize(width);
         paint.setColor(textColor);
         paint.getTextBounds(text, 0, text.length(), textBounds);
-
-        System.out.println(paint.getTextSize());
 
 
         switch (text.length()) {
@@ -113,7 +111,7 @@ final class Card {
             if (position >= SHIRT_SIZES.length || position == 0) {
                 imageView.setImageResource(Card.IMAGES[position]);
             } else {
-                imageView.setImageBitmap(Card.textAsBitmap(context, Card.SHIRT_SIZES[position], 350, Color.BLACK));
+                imageView.setImageBitmap(Card.textAsBitmap(context, Card.SHIRT_SIZES[position], Color.BLACK));
             }
         } else {
             imageView.setImageResource(Card.IMAGES[position]);
