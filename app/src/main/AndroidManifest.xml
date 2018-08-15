@@ -3,7 +3,8 @@
     package="pt.samp.scrumCards" >
 
     <application
-        android:icon="@drawable/icon"
+        android:icon="@mipmap/icon"
+        android:roundIcon="@mipmap/icon_round"
         android:label="@string/app_name"
         android:allowBackup="true"
         android:fullBackupContent="true" >
