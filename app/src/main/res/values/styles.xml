@@ -26,7 +26,7 @@
     <style name="full_card">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:background">@drawable/background_card_show</item>
+        <item name="android:background">#FFFFFF</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
 </resources>
