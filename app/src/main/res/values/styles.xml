@@ -26,20 +26,4 @@
         <item name="android:background">@drawable/background_card_show</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
-    <style name="content_window" parent="main_window">
-        <item name="android:padding">5dp</item>
-    </style>
-
-    <style name="title">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
-    </style>
-    <style name="line">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-    </style>
-    <style name="line1" parent="line">
-        <item name="android:layout_marginLeft">10dp</item>
-    </style>
 </resources>
