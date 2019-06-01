@@ -1,14 +1,14 @@
 package pt.samp.scrumCards;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-public class CardSelectorActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CardSelectorActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_PREFERENCES = 1;
 
     @Override
@@ -36,25 +36,25 @@ public class CardSelectorActivity extends Activity {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.app_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.app_menu, menu);
+        return true;
     }
 
     @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
-        switch (item.getItemId()) {
-        case R.id.menu_preferences:
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_preferences) {
             startActivityForResult(new Intent(this, PreferencesActivity.class), REQUEST_CODE_PREFERENCES);
             return true;
-        default:
-            return super.onOptionsItemSelected(item);
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void showCard(int pos) {

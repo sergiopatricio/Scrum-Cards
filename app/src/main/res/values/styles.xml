@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
     <style name="main_window">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">#000000</item>
     </style>
+
     <style name="card_option_line">
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_height">0dp</item>
@@ -12,6 +13,7 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_weight">1</item>
     </style>
+
     <style name="card_option_item">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
@@ -20,6 +22,7 @@
         <item name="android:background">@drawable/background_option_item</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
+
     <style name="full_card">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>

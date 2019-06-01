@@ -1,23 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" style="@style/main_window">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/main_window"
+    android:orientation="vertical">
+
     <LinearLayout style="@style/card_option_line">
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_0" android:id="@+id/card0" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1_2" android:id="@+id/card1_2" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_1" android:id="@+id/card1" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_2" android:id="@+id/card2" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_3" android:id="@+id/card3" />
+
+        <ImageView
+            android:id="@+id/card0"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_0" />
+
+        <ImageView
+            android:id="@+id/card1_2"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_1_2" />
+
+        <ImageView
+            android:id="@+id/card1"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_1" />
+
+        <ImageView
+            android:id="@+id/card2"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_2" />
+
+        <ImageView
+            android:id="@+id/card3"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_3" />
     </LinearLayout>
+
     <LinearLayout style="@style/card_option_line">
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_5" android:id="@+id/card5" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_8" android:id="@+id/card8" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_13" android:id="@+id/card13" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_20" android:id="@+id/card20" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_40" android:id="@+id/card40" />
+
+        <ImageView
+            android:id="@+id/card5"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_5" />
+
+        <ImageView
+            android:id="@+id/card8"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_8" />
+
+        <ImageView
+            android:id="@+id/card13"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_13" />
+
+        <ImageView
+            android:id="@+id/card20"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_20" />
+
+        <ImageView
+            android:id="@+id/card40"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_40" />
     </LinearLayout>
+
     <LinearLayout style="@style/card_option_line">
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_100" android:id="@+id/card100" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_question" android:id="@+id/cardquestion" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_infinite" android:id="@+id/cardinfinite" />
-        <ImageView style="@style/card_option_item" android:src="@drawable/card_small_coffee" android:id="@+id/cardcoffee" />
+
+        <ImageView
+            android:id="@+id/card100"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_100" />
+
+        <ImageView
+            android:id="@+id/cardquestion"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_question" />
+
+        <ImageView
+            android:id="@+id/cardinfinite"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_infinite" />
+
+        <ImageView
+            android:id="@+id/cardcoffee"
+            style="@style/card_option_item"
+            android:src="@drawable/card_small_coffee" />
     </LinearLayout>
 </LinearLayout>

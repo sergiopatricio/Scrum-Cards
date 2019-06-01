@@ -8,7 +8,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class CardShowActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CardShowActivity extends AppCompatActivity {
     public static final String CARD_TO_SHOW = "pt.samp.scrumCards.CardPosToShow";
     private static final int FLING_MINIMUM_INTERVAL = 50;
 
@@ -21,7 +23,7 @@ public class CardShowActivity extends Activity {
         setContentView(R.layout.show);
 
         int cardPosition = getIntent().getIntExtra(CARD_TO_SHOW, 0);
-        LinearLayout view = (LinearLayout) findViewById(R.id.show_container);
+        LinearLayout view = findViewById(R.id.show_container);
         View cardView = Card.createCardView(this, view, cardPosition);
         gestureDetector = new GestureDetector(this, new MyGestureDetector(this));
         view.addView(cardView);

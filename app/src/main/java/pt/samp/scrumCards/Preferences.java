@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.view.Window;
 import android.view.WindowManager;
 
 class Preferences {
@@ -35,7 +34,6 @@ class Preferences {
 
     public static void setWindowFlags(Activity activity, boolean fullScreen) {
         if (fullScreen) {
-            activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         if (keepScreenOn) {
